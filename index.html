@@ -1,544 +1,1147 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-
+<html lang="en">
 <head>
-
-  <title>Youru Li's Homepage</title>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="description" content="Youru Li is a Professor with the College of Computer Science, Beijing University of Technology">
-  <meta name="keywords" content="Youru Li, 李有儒, liyouru, Youru, Li, Data Mining, BJUT">
-  <meta name="author" content="Youru Li" />
-
-  <link rel="stylesheet" href="w3.css">
-
-  <style>
-  .w3-sidebar a {font-family: "Roboto", sans-serif}
-  body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
-  </style>
-
-  <link rel="icon" type="image/png" href="images/icons.png">
-  <!--
-  <script src="jquery.min.js"></script>
-  <script>
-  $(document).ready(function(){
-    // Add smooth scrolling to all links
-    $("a").on('click', function(event) {
-      // Make sure this.hash has a value before overriding default behavior
-      if (this.hash !== "") {
-        // Prevent default anchor click behavior
-        event.preventDefault();
-        // Store hash
-        var hash = this.hash;
-        // Using jQuery's animate() method to add smooth page scroll
-        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-        $('html, body').animate({
-          scrollTop: $(hash).offset().top
-        }, 800, function(){
-          // Add hash (#) to URL when done scrolling (default click behavior)
-          window.location.hash = hash;
-        });
-      } // End if
-    });
-  });
-  </script>
-  //-->
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youru Li - Academic Homepage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --text-color: #333;
+            --light-text: #6c757d;
+            --border-color: #e9ecef;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--primary-color);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 2rem;
+        }
+        
+        .nav-menu a {
+            color: var(--text-color);
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 100px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            width: 100%;
+        }
+        
+        .profile-img-container {
+            flex: 0 0 300px;
+        }
+        
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: var(--shadow);
+        }
+        
+        .hero-text {
+            flex: 1;
+        }
+        
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .hero-text h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: var(--light-text);
+        }
+        
+        .hero-text p {
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            font-size: 1.1rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--secondary-color);
+        }
+        
+        /* News Section */
+        .news-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        
+        .news-column {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .news-column h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .news-item {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .news-item:last-child {
+            border-bottom: none;
+        }
+        
+        .news-date {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        /* Research Section */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .research-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .research-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .research-card i {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .research-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        /* Publications Section */
+        .publications-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .publication-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .tab-btn {
+            padding: 1rem 2rem;
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--light-text);
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .tab-btn.active {
+            color: var(--secondary-color);
+        }
+        
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .publication-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        
+        .publication-item {
+            padding: 2rem;
+            border-left: 4px solid var(--secondary-color);
+            background-color: var(--light-color);
+            border-radius: 0 8px 8px 0;
+            transition: var(--transition);
+        }
+        
+        .publication-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .publication-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary-color);
+        }
+        
+        .publication-authors {
+            margin-bottom: 0.75rem;
+            color: var(--light-text);
+        }
+        
+        .publication-venue {
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .publication-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .publication-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            background-color: white;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .publication-links a:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .project-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .project-content p {
+            margin-bottom: 1.5rem;
+            color: var(--light-text);
+            flex-grow: 1;
+        }
+        
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+        
+        .project-funding {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        /* Awards Section */
+        .awards-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        
+        .award-item {
+            display: flex;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .award-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .award-year {
+            min-width: 100px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+        }
+        
+        .award-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        /* Services Section */
+        .services-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+        
+        .service-item {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-item i {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .service-list {
+            list-style: none;
+        }
+        
+        .service-list li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .service-list li::before {
+            content: '•';
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            font-weight: 500;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1400px) {
+            .container {
+                max-width: 1200px;
+            }
+        }
+        
+        @media (max-width: 1200px) {
+            .research-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .publication-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .news-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .awards-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-img-container {
+                flex: 0 0 auto;
+            }
+            
+            .profile-img {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-text h2 {
+                font-size: 1.5rem;
+            }
+            
+            .projects-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: var(--shadow);
+                padding: 2rem 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 1rem 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-text h2 {
+                font-size: 1.25rem;
+            }
+            
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .publication-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .tab-btn {
+                padding: 0.75rem 1.5rem;
+            }
+            
+            .service-item,
+            .publication-item,
+            .project-content,
+            .news-column {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <div class="nav-container">
+                <a href="#" class="logo">Youru<span>Li</span></a>
+                <div class="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#awards">Awards</a></li>
+                    <li><a href="#services">Services</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
 
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="profile-img-container">
+                    <img src="https://via.placeholder.com/300" alt="Youru Li" class="profile-img">
+                </div>
+                <div class="hero-text">
+                    <h1>Youru Li (李有儒)</h1>
+                    <h2>Professor, College of Computer Science</h2>
+                    <p>Youru Li is a Professor with the College of Computer Science, Beijing University of Technology, Beijing, China and also a Visiting Fellow at MIIT Key Laboratory of Data Intelligence and Management, Beihang University, Beijing, China. He has received the Ph.D. and M.E. degrees at the Department of Computer Science, Beijing Jiaotong University (BJTU), Beijing, China.</p>
+                    <p>His current research interests include sequence data mining, knowledge graph and their applications on Health Informatic, RecSys and FinTech. He has published over 30 research papers in refereed conferences and journals.</p>
+                    <div class="social-links">
+                        <a href="mailto:liyouru@bjtu.edu.cn" title="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://scholar.google.com/citations?user=s9FUB74AAAAJ&hl=zh-CN" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="https://orcid.org/0000-0002-9326-9863" title="ORCID"><i class="fab fa-orcid"></i></a>
+                        <a href="https://dblp.org/pid/230/4004.html" title="DBLP"><i class="fas fa-book"></i></a>
+                        <a href="https://github.com/LiYouru0228" title="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<body class="w3-content" style="max-width:1000px">
+    <!-- News Section -->
+    <section id="news" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Latest News</h2>
+            </div>
+            <div class="news-container">
+                <div class="news-column">
+                    <h3>Recent Updates</h3>
+                    <div class="news-item">
+                        <div class="news-date">January 2025</div>
+                        <p>I will be supported by <a href="https://www.gov.cn/yaowen/liebiao/202410/content_6979235.htm">the Inaugural Young Elite Scientists Sponsorship Program by CAST, Doctoral Student Special Plan</a>.</p>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">August 2024</div>
+                        <p>Our paper has been accepted by <a href="https://dl.acm.org/doi/10.1145/3691357">ACM TORS</a>.</p>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">May 2024</div>
+                        <p>Our paper has been accepted by <a href="https://dl.acm.org/doi/10.1145/3637528.3671974">KDD 2024 (Research Track)</a>.</p>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">May 2024</div>
+                        <p>Our paper has been accepted by <a href="https://dl.acm.org/doi/10.1145/3664288">ACM TOMM</a>.</p>
+                    </div>
+                </div>
+                <div class="news-column">
+                    <h3>Earlier News</h3>
+                    <div class="news-item">
+                        <div class="news-date">February 2024</div>
+                        <p>Our paper has been accepted by <a href="https://ieeexplore.ieee.org/document/10445316/authors#authors">IEEE TIM</a>.</p>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">January 2024</div>
+                        <p>Our paper has been accepted by <a href="https://dl.acm.org/doi/pdf/10.1145/3640468">ACM TKDD</a>.</p>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">January 2024</div>
+                        <p>Our project has been honoured the <a href="http://103.95.70.85:81/index_detail.aspx?id=28">CAAI WU Wenjun AI Science and Technology Award</a>.</p>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">November 2023</div>
+                        <p>I have been won the <a href="https://yb.cie.org.cn/list_223/13229.html">CIE Excellent Doctoral Dissertation Forum Best Poster Award</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-bar-block w3-blue w3-collapse w3-top w3-right" style="z-index:3;width:150px" id="mySidebar">
-  <div class="w3-container w3-display-container w3-padding-16">
-    <h3><b>YOURU</b></h3>
-  </div>
-  <div class="w3-padding-64 w3-text-light-grey w3-large" style="font-weight:bold">
-    <a href="#home" class="w3-bar-item w3-button">Home</a>
-    <a href="#news" class="w3-bar-item w3-button">News</a>
-    <a href="#projects" class="w3-bar-item w3-button">Projects</a>
-    <a href="#publications" class="w3-bar-item w3-button">Research</a>
-    <a href="#service" class="w3-bar-item w3-button">Services</a>
-    <a href="#award" class="w3-bar-item w3-button">Awards</a>
-  </div>
-</nav>
+    <!-- Research Section -->
+    <section id="research">
+        <div class="container">
+            <div class="section-title">
+                <h2>Research Interests</h2>
+            </div>
+            <div class="research-grid">
+                <div class="research-card">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>Sequence Data Mining</h3>
+                    <p>Developing novel algorithms for mining and analyzing sequential data patterns in various applications.</p>
+                </div>
+                <div class="research-card">
+                    <i class="fas fa-sitemap"></i>
+                    <h3>Knowledge Graphs</h3>
+                    <p>Constructing and utilizing knowledge graphs for enhanced data representation and reasoning.</p>
+                </div>
+                <div class="research-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Health Informatics</h3>
+                    <p>Applying data mining techniques to healthcare data for improved medical decision-making.</p>
+                </div>
+                <div class="research-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Recommender Systems</h3>
+                    <p>Developing advanced recommendation algorithms for personalized user experiences.</p>
+                </div>
+                <div class="research-card">
+                    <i class="fas fa-coins"></i>
+                    <h3>FinTech</h3>
+                    <p>Applying AI and data mining techniques to financial technology applications.</p>
+                </div>
+                <div class="research-card">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Spatial-Temporal Data</h3>
+                    <p>Analyzing and modeling data with both spatial and temporal dimensions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Top menu on small screens -->
-<header class="w3-bar w3-top w3-hide-large w3-blue w3-xlarge">
-  <div class="w3-bar-item w3-padding-24">YOURU</div>
-  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right"  style="font-stretch: extra-expanded;" onclick="w3_open()"><b>≡</b></a>
-  </div>
-</header>
+    <!-- Publications Section -->
+    <section id="publications" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Publications</h2>
+            </div>
+            <div class="publications-container">
+                <div class="publication-tabs">
+                    <button class="tab-btn active" data-tab="conference">Conference Papers</button>
+                    <button class="tab-btn" data-tab="journal">Journal Papers</button>
+                </div>
+                
+                <div class="tab-content active" id="conference">
+                    <div class="publication-list">
+                        <div class="publication-item">
+                            <h3>FlexCare: Leveraging Cross-Task Synergy for Flexible Multimodal Healthcare Prediction</h3>
+                            <div class="publication-authors">Muhao Xu, Zhenfeng Zhu, Youru Li, Shuai Zheng, Yawei Zhao, Kunlun He, Yao Zhao</div>
+                            <div class="publication-venue">KDD 2024</div>
+                            <div class="publication-links">
+                                <a href="#"><i class="fas fa-file-pdf"></i> Paper</a>
+                                <a href="#"><i class="fas fa-code"></i> Code</a>
+                            </div>
+                        </div>
+                        
+                        <div class="publication-item">
+                            <h3>Learning Joint Relational Co-evolution in Spatial-Temporal Knowledge Graph for SMEs Supply Chain Prediction</h3>
+                            <div class="publication-authors">Youru Li, Zhenfeng Zhu, Xiaobo Guo, Linxun Chen, Zhouyin Wang, Yinmeng Wang, Bing Han, Yao Zhao</div>
+                            <div class="publication-venue">KDD 2023</div>
+                            <div class="publication-links">
+                                <a href="#"><i class="fas fa-file-pdf"></i> Paper</a>
+                                <a href="#"><i class="fas fa-code"></i> Code</a>
+                                <a href="#"><i class="fas fa-video"></i> Video</a>
+                            </div>
+                        </div>
+                        
+                        <div class="publication-item">
+                            <h3>SGT: Scene Graph-Guided Transformer for Surgical Report Generation</h3>
+                            <div class="publication-authors">Chen Lin, Shuai Zheng, Zhizhe Liu, Youru Li, Zhenfeng Zhu, Yao Zhao</div>
+                            <div class="publication-venue">MICCAI 2022</div>
+                            <div class="publication-links">
+                                <a href="#"><i class="fas fa-file-pdf"></i> Paper</a>
+                                <a href="#"><i class="fas fa-code"></i> Code</a>
+                            </div>
+                        </div>
+                        
+                        <div class="publication-item">
+                            <h3>Learning heterogeneous spatial-temporal representation for bike-sharing demand prediction</h3>
+                            <div class="publication-authors">Youru Li, Zhenfeng Zhu, Deqiang Kong, Meixiang Xu, Yao Zhao</div>
+                            <div class="publication-venue">AAAI 2019</div>
+                            <div class="publication-links">
+                                <a href="#"><i class="fas fa-file-pdf"></i> Paper</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="journal">
+                    <div class="publication-list">
+                        <div class="publication-item">
+                            <h3>Determinantal Point Processes Guided Crowd-wise Mixture-of-Experts for Recommendation in Alipay</h3>
+                            <div class="publication-authors">Youru Li, Zhenfeng Zhu, Shaohu Chen, Kaiming Shen, Xingxing Zhang Wenliang Zhong and Yao Zhao</div>
+                            <div class="publication-venue">ACM Transactions on Recommender Systems 2024</div>
+                            <div class="publication-links">
+                                <a href="#"><i class="fas fa-file-pdf"></i> Paper</a>
+                            </div>
+                        </div>
+                        
+                        <div class="publication-item">
+                            <h3>HKA: A Hierarchical Knowledge Alignment Framework for Multimodal Knowledge Graph Completion</h3>
+                            <div class="publication-authors">Yunhui Xu, Youru Li, Muhao Xu, Zhenfeng Zhu and Yao Zhao</div>
+                            <div class="publication-venue">ACM Transactions on Multimedia Computing, Communications, and Applications 2024</div>
+                            <div class="publication-links">
+                                <a href="#"><i class="fas fa-file-pdf"></i> Paper</a>
+                            </div>
+                        </div>
+                        
+                        <div class="publication-item">
+                            <h3>Multi-Task Learning with Sequential Dependence Towards Industrial Applications: A Systematic Formulation</h3>
+                            <div class="publication-authors">Huaxin Pang, Shikui Wei, Youru Li, Ting Liu, Huaqi Zhang, Ying Qin and Yao Zhao</div>
+                            <div class="publication-venue">IEEE Transactions on Instrumentation and Measurement 2024</div>
+                            <div class="publication-links">
+                                <a href="#"><i class="fas fa-file-pdf"></i> Paper</a>
+                            </div>
+                        </div>
+                        
+                        <div class="publication-item">
+                            <h3>Node-oriented Spectral Filtering for Graph Neural Networks</h3>
+                            <div class="publication-authors">Shuai Zheng, Zhenfeng Zhu, Zhizhe Liu, Youru Li and Yao Zhao</div>
+                            <div class="publication-venue">IEEE Transactions on Pattern Analysis and Machine Intelligence 2023</div>
+                            <div class="publication-links">
+                                <a href="#"><i class="fas fa-file-pdf"></i> Paper</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Research Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/600x250" alt="Project 1" class="project-img">
+                    <div class="project-content">
+                        <h3>Knowledge-enhanced Representation Learning for Structured Data</h3>
+                        <p>This project proposes a framework for knowledge-enhanced structured data representation learning and attempts to systematically give a solution to the challenges of complex structured data in information pattern mining and representation learning.</p>
+                        <div class="project-meta">
+                            <span class="project-funding">Alibaba Innovative Research Foundation</span>
+                            <a href="#">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/600x250" alt="Project 2" class="project-img">
+                    <div class="project-content">
+                        <h3>Spatio-temporal Data Mining and Prediction Modeling</h3>
+                        <p>Focusing on the key research task of representation learning and prediction modeling in spatial-temporal data mining, aiming at the important research issues such as taking importance-based sampling for time series prediction.</p>
+                        <div class="project-meta">
+                            <span class="project-funding">Fundamental Research Fund Project</span>
+                            <a href="#">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:150px">
+    <!-- Awards Section -->
+    <section id="awards" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Awards & Honors</h2>
+            </div>
+            <div class="awards-container">
+                <div class="awards-column">
+                    <div class="award-item">
+                        <div class="award-year">2024</div>
+                        <div class="award-content">
+                            <h3>Second Prize for Technological Progress of CAAI WU Wenjun AI Science and Technology Award</h3>
+                            <p>Chinese Association for Artificial Intelligence</p>
+                        </div>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-year">2023</div>
+                        <div class="award-content">
+                            <h3>CIE Excellent Doctoral Dissertation Forum Best Poster Award</h3>
+                            <p>Chinese Institute of Electronics</p>
+                        </div>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-year">2023</div>
+                        <div class="award-content">
+                            <h3>National Scholarship for Ph.D Students</h3>
+                            <p>Ministry of Education of China</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="awards-column">
+                    <div class="award-item">
+                        <div class="award-year">2022</div>
+                        <div class="award-content">
+                            <h3>First-class Ph.D. Academic Scholarship of BJTU</h3>
+                            <p>Beijing Jiaotong University</p>
+                        </div>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-year">2021</div>
+                        <div class="award-content">
+                            <h3>Chinese Institute of Electronics (CIE) Excellent Master Dissertation Award</h3>
+                            <p>Chinese Institute of Electronics</p>
+                        </div>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-year">2020</div>
+                        <div class="award-content">
+                            <h3>Excellent Master Dissertation of Beijing Jiaotong University</h3>
+                            <p>Beijing Jiaotong University</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Push down content on small screens -->
-  <div class="w3-hide-large" style="margin-top:83px"></div>
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Academic Services</h2>
+            </div>
+            <div class="services-container">
+                <div class="services-grid">
+                    <div class="service-item">
+                        <i class="fas fa-pen-fancy"></i>
+                        <h3>Journal Reviewing</h3>
+                        <ul class="service-list">
+                            <li>IEEE TPAMI</li>
+                            <li>IEEE TKDE</li>
+                            <li>ACM TKDD</li>
+                            <li>ACM TIST</li>
+                            <li>IEEE TPDS</li>
+                            <li>IEEE TNNLS</li>
+                            <li>IEEE TCYB</li>
+                            <li>IEEE TITS</li>
+                        </ul>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-users"></i>
+                        <h3>Conference Committees</h3>
+                        <ul class="service-list">
+                            <li>TheWebConf (WWW) 2022-2025</li>
+                            <li>ICASSP 2024-2025</li>
+                            <li>AAAI 2023-2024</li>
+                            <li>IJCAI 2023</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- The Home Section -->
-    <div class="w3-container w3-center w3-padding-32" id="home">
-      <img style="width: 18%;max-width: 320px" alt="profile photo" src="images/lyr.jpg">
-      <h1>Youru Li (李有儒)</h1>
-        <p class="w3-justify" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;max-width:600px">
-  Youru Li is a Professor with the College of Computer Science, Beijing University of Technology, Beijing, China and also a Visiting Fellow at MIIT Key Laboratory of Data Intelligence and Management, Beihang University, Beijing, China. He has received the Ph.D. and M.E. degrees at the Department of Computer Science, <a href="http://en.njtu.edu.cn/">Beijing Jiaotong University (BJTU)</a>, Beijing, China in Jun. 2025 and Jun. 2020, respectively. From Jun. 2020 to Aug. 2021, he worked for <a href="https://www.antgroup.com/en">Ant Financial</a>, Alibaba, as a machine learning algorithm engineer. His current research interests include sequence data mining, knowledge graph and their applications on Health Informatic, RecSys and FinTech. He has published over 30 research papers in refereed conferences and journals (e.g., TPAMI, TKDE, TKDD, TORS, KDD, AAAI, MICCAI). He has received the <a href="https://www.cie.org.cn/list_43/4061.html">Chinese Institute of Electronics (CIE) Excellent Master Dissertation Award</a> in 2020 and the <a href="http://103.95.70.85:81/index_detail.aspx?id=27"> Second Prize for Technological Progress of Chinese Association for Artificial Intelligence (CAAI) WU Wenjun AI Science and Technology Award</a> in 2023. He has been supported by <a href="https://www.gov.cn/yaowen/liebiao/202410/content_6979235.htm"> the Inaugural Young Elite Scientists Sponsorship Program by CAST, Doctoral Student Special Plan. (Supported by the Chinese Institute of Electronics (CIE)) </a>. 
-          
-      </p>
-        <p class="w3-center">
-          <a href="mailto:liyouru@bjtu.edu.cn">Email</a> &nbsp/&nbsp
-          <a href="https://scholar.google.com/citations?user=s9FUB74AAAAJ&hl=zh-CN">Google Scholar</a> &nbsp/&nbsp
-          <a href="https://orcid.org/0000-0002-9326-9863"> ORCID </a> &nbsp/&nbsp
-          <a href="https://dblp.org/pid/230/4004.html"> DBLP </a> &nbsp/&nbsp
-          <a href="https://github.com/LiYouru0228"> GitHub </a>
-        </p>
-        </tbody></table>
-  </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>Youru Li</h3>
+                <p>Professor, College of Computer Science, Beijing University of Technology</p>
+                <div class="footer-links">
+                    <a href="mailto:liyouru@bjtu.edu.cn">Email</a>
+                    <a href="https://scholar.google.com/citations?user=s9FUB74AAAAJ&hl=zh-CN">Google Scholar</a>
+                    <a href="https://orcid.org/0000-0002-9326-9863">ORCID</a>
+                    <a href="https://dblp.org/pid/230/4004.html">DBLP</a>
+                    <a href="https://github.com/LiYouru0228">GitHub</a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2024 Youru Li. All rights reserved.</p>
+                    <p>Welcome to use this website's source code, just add a link back to here.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-<!-- The News Section -->
-  <div class="w3-container w3-light-grey w3-padding-32" id="news">
-   <h2>News</h2>
-      <p><li> 01/2025, I will be supported by <a href="https://www.gov.cn/yaowen/liebiao/202410/content_6979235.htm"> the Inaugural Young Elite Scientists Sponsorship Program by CAST, Doctoral Student Special Plan. (Supported by the Chinese Institute of Electronics (CIE)) </a>. </li></p>
-      <p><li> 08/2024, Our paper has been accepted by <a href="https://dl.acm.org/doi/10.1145/3691357">ACM TORS</a>. </li></p>
-      <p><li> 05/2024, Our paper has been accepted by <a href="https://dl.acm.org/doi/10.1145/3637528.3671974">KDD 2024（Research Track）</a>. </li></p>
-      <p><li> 05/2024, Our paper has been accepted by <a href="https://dl.acm.org/doi/10.1145/3664288"> ACM TOMM</a>. </li></p>
-      <p><li> 02/2024, Our paper has been accepted by <a href="https://ieeexplore.ieee.org/document/10445316/authors#authors"> IEEE TIM</a>. </li></p>
-      <p><li> 01/2024, Our paper has been accepted by <a href="https://dl.acm.org/doi/pdf/10.1145/3640468"> ACM TKDD</a>. </li></p>
-      <p><li> 01/2024, Our project has been honoured the <a href="http://103.95.70.85:81/index_detail.aspx?id=28"> CAAI WU Wenjun AI Science and Technology Award</a>.</li></p>
-      <p><li> 11/2023, I have been won the <a href="https://yb.cie.org.cn/list_223/13229.html"> CIE Excellent Doctoral Dissertation Forum Best Poster Award</a>. </li></p>
-      <p><li> 10/2023, Our paper has been accepted by <a href="https://link.springer.com/article/10.1007/s10489-023-05057-7"> Applied Intelligence</a>. </li></p>
-      <p><li> 10/2023, Our paper has been accepted by <a href="https://ieeexplore.ieee.org/document/10286416"> IEEE TPAMI</a>. </li></p>
-      <p><li> 09/2023, Our paper has been accepted by <a href="https://ieeexplore.ieee.org/document/10256685"> IEEE TKDE</a>. </li></p>
-      <p><li> 06/2023, Our paper has been accepted by <a href="https://dl.acm.org/doi/10.1145/3605895"> ACM TKDD</a>. </li></p>
-      <p><li> 06/2023, Our paper has been accepted by <a href="https://www.sciencedirect.com/science/article/pii/S0957417423012241"> Expert Systems with Applications</a>. </li></p>
-      <p><li> 06/2023, Our paper has been accepted by <a href="https://www.sciencedirect.com/science/article/pii/S0010482523006030"> Computers in Biology and Medicine</a>. </li></p>
-      <p><li> 05/2023, Our paper has been accepted by <a href="https://dl.acm.org/doi/abs/10.1145/3580305.3599855">KDD 2023（ADS Track）</a>. </li></p>
-      <p><li> 12/2022, Our paper has been accepted by <a href="https://www.sciencedirect.com/science/article/pii/S0010482522012082?dgc">Computers in Biology and Medicine</a>.</li></p>
-      <p><li> 11/2022, Our paper has been accepted by <a href="https://ieeexplore.ieee.org/abstract/document/9933729">IEEE TKDE</a>.</li></p>
-      <p><li> 10/2022, Our paper <a href="https://www.caa.org.cn/article/191/3168.html"> has been selected as the CNKI 2011-2022 High Impact Papers</a>.</li></p>
-      <p><li> 09/2022, Our paper <a href="https://www.sciencedirect.com/science/article/pii/S0950705119302400">EA-LSTM</a> has been selected as the ESI Highly Cited Papers. </li></p>
-      <p><li> 05/2022, Our paper has been accepted by <a href="https://conferences.miccai.org/2022/en/">MICCAI 2022</a>. </li></p>
-      <p><li> 02/2022, Our paper has been accepted by <a href="https://link.springer.com/article/10.1007/s00521-021-06871-1">Neural Computing and Applications</a>. </li></p>
-      <p><li> 12/2021, I have been supported by the Alibaba Innovative Research Foundation (talent plan for Ph.D student).</li></p>
-      <p><li> 07/2021, Our paper has been accepted by <a href="https://www.sciencedirect.com/science/article/pii/S1746809421002135">Biomedical Signal Processing and Control</a>. </li></p>  
-      <p><li> 04/2021, Our paper has been accepted accepted by <a href="https://ieeexplore.ieee.org/abstract/document/9409651">IEEE TKDE</a>.</li></p>
-      <p><li> 02/2021, My thesis has been honoured the <a href="https://www.cie-info.org.cn/site/content/4061.html">2020 Chinese Institute of Electronics (CIE) Excellent Master Dissertation Award</a>.</li></p>
-  </div>
-<!-- The Projects Section -->
-  <div class="w3-container w3-padding-32" id="projects">
-    <h2>Recent Projects</h2>
-    <p class="w3-justify">
-        <strong>1. Alibaba Innovative Research Foundation (talent plan for Ph.D student)</strong>. With the continuous popularization and development of intelligent devices and information collection technologies, more and more structured data become more accessible and play an unprecedented application value in different fields, such as Internet finance, smart transportation, smart agriculture, recommendation marketing, and so on. To address the challenges of complex structured data in information pattern mining and representation learning, such as the low quality of data due to data sparsity, how to self-adaptively utilize or eliminate bias in biased data modeling, how to fully learn the complementary information among different structured data elements in multi-data representation learning, and how to improve interpretability in structured data representation modeling through knowledge-aware approach, this project proposes a knowledge-aware approach to improve interpretability in structured data representation modeling. This project proposes a framework for knowledge-enhanced structured data representation learning and attempts to systematically give a solution to the challenges.
-    </p>
-
-        <h4><li>Knowledge-enhanced Representation Learning for Structured Data</li></h4>
-        <img style="width:90%;" src="images/pro1.png"> 
-        <!-- <p class="w3-justify">
-        <a style="color: #447ec9" href="https://github.com/huawei-noah/AdderNet">Project Page</a> | <a style="color: #447ec9" href="https://arxiv.org/pdf/2101.10015.pdf">Hardware Implementation</a>
-        </p> -->
-        <p class="w3-justify">
-        Around the above condensed several key research problems, the proposed solutions of this project include 1) homogeneous knowledge mining and abstract semantic sharing among samples based on prototype learning; 2) environmental semantic enhancement and adaptive biased sample modeling based on knowledge graph; 3) unified representation of common knowledge and collaborative learning of personality information among multivariate heterogeneous data; 4) automatic acquisition of interpretable rules in decision making and sample specificity-based data analysis framework. The flow organization of the whole program from the research background to the scientific problem condensation to the overview of the proposed key technologies to the overall research objectives is shown in Figure above.
-        </p> 
-
-    <p class="w3-justify">
-        <strong>2. Fundamental Research Fund Project of Central Universities of China</strong>. With the continuous upgrading of national intelligent construction strategy and the fast development of techniques such as real-time positioning, intelligent mobile terminals and portable sensors, spatial-temporal data has become increasingly available nowadays and shows practical application value. Mining valuable knowledge from spatial-temporal data can contribute to effectively solve the problems in real world applications. Accordingly, how to better learn the representation of pattern in spatial-temporal data, and establish accurate prediction model for different tasks, so as to realize discovering of high-value knowledge automatically can be a very valuable research problem. 
-    </p>
-
-        <h4><li>Spatio-temporal Data Mining and Prediction Modeling</li></h4>
-        <img style="width:80%;" src="images/pro2.png"> 
-        <!-- <p class="w3-justify">
-        <a style="color: #447ec9" href="https://github.com/huawei-noah/AdderNet">Project Page</a> | <a style="color: #447ec9" href="https://arxiv.org/pdf/2101.10015.pdf">Hardware Implementation</a>
-        </p> -->
-        <p class="w3-justify">
-        In this project, spatial-temporal data is taken as the research object, focusing on the key research task of representation learning and prediction modeling in spatial-temporal data mining, aiming at the important research issues such as taking importance-based sampling for time series prediction, heterogeneous spatial-temporal representation learning for demand prediction, learning embedding from order-dependently semantic cross-field categorical attributes and dynamic interest sequence learning via knowledge graph. 
-        </p> 
-
-        <!-- <h4><li>GhostNet on MindSpore: SOTA Lightweight CV Networks</li></h4>
-        <img style="width:96%;" src="images/GhostNet.png"> 
-        <p class="w3-justify">
-        <a style="color: #447ec9" href="https://live.huawei.com/huaweiconnect/meeting/cn/5872.html">Huawei Connect (HC) 2020</a> | <a style="color: #447ec9" href="https://www.mindspore.cn/resources/hub">MindSpore Hub</a>
-        </p>
-        <p class="w3-justify">
-        The initial verison of GhostNet was accepted by CVPR 2020, which achieved SOTA performance on ImageNet: <span style="color:red">75.7%</span> top1 acc with only <span style="color:red">226M FLOPS</span>. In the current version, we release a series computer vision models (e.g. int8 quantization, detection, and larger networks) on <strong>MindsSpore 1.0</strong> and <strong>Mate 30 Pro (Kirin 990)</strong>.
-        </p> 
-
-        <h4><li>AI on Ascend: Real-Time Video Style Transfer</li></h4>
-        <img style="width:32%;" src="images/atlas200.png"> &nbsp&nbsp <img style="width:60%;" src="images/video.gif">
-        <p class="w3-justify">
-        <a style="color: #447ec9" href="https://www.huaweicloud.com/intl/en-us/HDC.Cloud.html">Huawei Developer Conference (HDC) 2020</a> | <a style="color: #447ec9" href="https://developer.huaweicloud.com/exhibition/Atlas_neural_style.html">Online Demo</a>
-        </p>
-        <p class="w3-justify">
-        This project aims to develop a video style transfer system on the <strong>Huawei Atlas 200 DK AI developer Kit</strong>. The latency of the original model for processing one image is about <span style="color:red">630ms</span>. After accelerating it using our method, the lantency now is about <span style="color:red">40ms</span>. 
-        </p>   -->
-
-  </div>
-  
-  <!-- The Talks Section -->
-  <!-- <div class="w3-container w3-light-grey w3-padding-32" id="talks">
-    <h2>Talks</h2>
-      <p><li> 10/2021, Vision Transformer at <a href="http://valser.org/2021/#/tutorial">VALSE 2021, Hangzhou, China</a>.</li></p>
-    <p><li> 05/2021, Adder Neural Network at <a href="https://haet2021.github.io/speakers.html">HAET ICLR 2021 workshop</a>. Thanks <a href="https://datawisdom.ca/">Vahid</a> for the invitation.</li></p>
-      <p><li> 06/2020, "<a href="http://valser.org/webinar/slide/slides/20200603/%E6%A8%A1%E5%9E%8B%E5%8E%8B%E7%BC%A9-%E5%B7%A5%E4%B8%9A%E7%95%8C%E5%92%8C%E5%AD%A6%E6%9C%AF%E7%95%8C%E7%9A%84%E5%B7%AE%E5%BC%82.pdf">AI on the Edge - Discussion on the Gap Between Industry and Academia</a>" at <a  href="http://valser.org/"><strong>VALSE</strong></a> Webinar.</li></p>
-      <p><li> 05/2020, "<a href="https://www.bilibili.com/video/av925692420/">Edge AI: Progress and Future Directions</a>" at <a href="https://www.qbitai.com/"> <strong>QbitAI</strong></a> using <a  href="https://www.bilibili.com/"><strong>bilibili</strong></a>.</li></p>
-  </div> -->
- <!-- The Publications Section -->
-  <div class="w3-container w3-padding-32" id="publications">
-    <h2>Research</h2>
-      <p class="w3-left-align" style="line-height:200%">
-        He interested in sequence data mining, knowledge graph and their applications in Healthcare Informatics, RecSys and finTech, etc. 
-      </p>
-    
-    <!-- <h4> Preprint Papers:</h4> -->
-
-     <!-- <ol> -->
-      
-      <!--<p> -->
-      <!--<li><strong>Node-oriented Spectral Filtering for Graph Neural Networks</strong>-->
-      <!--<br>-->
-      <!--Shuai Zheng, Zhenfeng Zhu, Zhizhe Liu, <strong>Youru Li</strong> and Yao Zhao-->
-      <!--<br>-->
-      <!--<em>arXiv:2212.03654</em> 2022 | <a style="color: #447ec9" href="https://arxiv.org/pdf/2212.03654.pdf">paper</a> -->
-      <!--</p>-->
-
-    <!--</ol>-->
-
-    
-    <h4> Conference Papers:</h4>
-
-    <ol>
-      <p>
-      <li><strong>FlexCare: Leveraging Cross-Task Synergy for Flexible Multimodal Healthcare Prediction</strong>
-      <br>
-      Muhao Xu, Zhenfeng Zhu, <strong>Youru Li</strong>, Shuai Zheng, Yawei Zhao, Kunlun He, Yao Zhao
-      <br>
-      <em>KDD</em> 2024 | <a style="color: #447ec9" href="https://dl.acm.org/doi/10.1145/3637528.3671974">paper</a> | <a style="color: #447ec9" href="https://github.com/mhxu1998/FlexCare">code</a> 
-      </p>
-      </p>
-      
-      <p>
-      <li><strong>Learning Joint Relational Co-evolution in Spatial-Temporal Knowledge Graph for SMEs Supply Chain Prediction</strong>
-      <br>
-      <strong>Youru Li</strong>, Zhenfeng Zhu, Xiaobo Guo, Linxun Chen, Zhouyin Wang, Yinmeng Wang, Bing Han, Yao Zhao
-      <br>
-      <em>KDD</em> 2023 | <a style="color: #447ec9" href="data/KDD23.pdf">paper</a> | <a style="color: #447ec9" href="https://github.com/LiYouru0228/STKG-JRCL">code</a> | <a style="color: #447ec9" href="https://www.youtube.com/watch?app=desktop&v=ev8K2mK2fgg&list=PLn0nrSd4xjjaJCYKwjTdC7AvGrBKbu_yd&index=3">video</a>
-      </p>
-      </p>
-      
-      <p>
-      <li><strong>SGT: Scene Graph-Guided Transformer for Surgical Report Generation</strong>
-      <br>
-      Chen Lin, Shuai Zheng, Zhizhe Liu, <strong>Youru Li</strong>, Zhenfeng Zhu, Yao Zhao
-      <br>
-      <em>MICCAI</em> 2022 | <a style="color: #447ec9" href="data/SGT.pdf">paper</a> | <a style="color: #447ec9" href="https://github.com/ccccchenllll/SGT_master">code</a>
-      </p>
-
-      <p>
-      <li><strong>Learning heterogeneous spatial-temporal representation for bike-sharing demand prediction</strong>
-      <br>
-      <strong>Youru Li</strong>, Zhenfeng Zhu, Deqiang Kong, Meixiang Xu, Yao Zhao
-      <br>
-      <em>AAAI</em> 2019 | <a style="color: #447ec9" href="https://ojs.aaai.org/index.php/AAAI/article/view/3890">paper</a> 
-      </p>
-
-      <p>
-      <li><strong>The study on human action recognition with depth video for intelligent monitoring</strong>
-      <br>
-      Xueping Liu, Yibo Li, <strong>Youru Li</strong>, Shi Yu, Can Tian
-      <br>
-      <em>IEEE CCDC</em> 2019 | <a style="color: #447ec9" href="https://ieeexplore.ieee.org/abstract/document/8833460">paper</a> 
-      </p>
-
-      <p>
-      <li><strong>Study on system modeling and optimization of static evaluation based on the computer game of draughts</strong>
-      <br>
-      <strong>Li Youru</strong>, Liu Xueping, Zhang Hekai, Xi Yuting
-      <br>
-      <em>IEEE CCDC</em> 2016 | <a style="color: #447ec9" href="https://ieeexplore.ieee.org/abstract/document/7531735">paper</a> 
-      </p>
-
-      <p>
-      <li><strong>A systematic research about the computer game of checkers based on the decision-making of AI</strong>
-      <br>
-      <strong>Youru Li</strong>, Liu Xueping, Wang Yajie, Xi Yuting
-      <br>
-      <em>IEEE CCDC</em> 2015 | <a style="color: #447ec9" href="https://ieeexplore.ieee.org/abstract/document/7161978">paper</a> 
-      </p>
-
-    </ol>
-    
-    <h4> Journal Papers:</h4>
-
-    <ol>
-      <p>
-      <li><strong>Determinantal Point Processes Guided Crowd-wise Mixture-of-Experts for Recommendation in Alipay</strong>
-      <br>
-      <strong>Youru Li</strong>, Zhenfeng Zhu, Shaohu Chen, Kaiming Shen, Xingxing Zhang Wenliang Zhong and Yao Zhao
-      <br>
-      <em>ACM Transactions on Recommender Systems </em> 2024 | <a style="color: #447ec9" href="https://dl.acm.org/doi/10.1145/3691357">paper</a>          
-      </p>
-      
-      <p>
-      <li><strong>HKA: A Hierarchical Knowledge Alignment Framework for Multimodal Knowledge Graph Completion</strong>
-      <br>
-      Yunhui Xu, <strong>Youru Li</strong>, Muhao Xu, Zhenfeng Zhu and Yao Zhao
-      <br>
-      <em>ACM Transactions on Multimedia Computing, Communications, and Applications </em> 2024 | <a style="color: #447ec9" href="https://dl.acm.org/doi/10.1145/3664288">paper</a>          
-      </p>
-      
-      <p>
-      <li><strong>Multi-Task Learning with Sequential Dependence Towards Industrial Applications: A Systematic Formulation</strong>
-      <br>
-      Huaxin Pang, Shikui Wei, <strong>Youru Li</strong>, Ting Liu, Huaqi Zhang, Ying Qin and Yao Zhao
-      <br>
-      <em>IEEE Transactions on Instrumentation and Measurement </em> 2024 | <a style="color: #447ec9" href="https://ieeexplore.ieee.org/document/10445316">paper</a>          
-      </p>
-      
-      <p>
-      <li><strong>Multi-Task Learning with Sequential Dependence Towards Industrial Applications: A Systematic Formulation</strong>
-      <br>
-      Xiaobo Guo, Mingming Ha, Xuewen Tao, Shaoshuai Li, <strong>Youru Li</strong>, Zhenfeng Zhu, Zhiyong Shen, Li Ma
-      <br>
-      <em>ACM Transactions on Knowledge Discovery from Data </em> 2024 | <a style="color: #447ec9" href="https://dl.acm.org/doi/pdf/10.1145/3640468">paper</a>          
-      </p>
-      
-      <p>
-      <li><strong>Multi-scale adaptive attention-based time-variant neural networks for multi-step time series forecasting</strong>
-      <br>
-      Changxia Gao, Ning Zhang, <strong>Youru Li</strong>, Yan Lin and Huaiyu Wan
-      <br>
-      <em>Applied Intelligence </em> 2023 | <a style="color: #447ec9" href="data/APIN-23.pdf">paper</a> | <a style="color: #447ec9" href="https://github.com/chxiag/MATVN">code</a>         
-      </p>
-      
-      <p>
-      <li><strong>Node-oriented Spectral Filtering for Graph Neural Networks</strong>
-      <br>
-      Shuai Zheng, Zhenfeng Zhu, Zhizhe Liu, <strong>Youru Li</strong> and Yao Zhao
-      <br>
-      <em>IEEE Transactions on Pattern Analysis and Machine Intelligence</em> 2023 | <a style="color: #447ec9" href="https://ieeexplore.ieee.org/document/10286416">paper</a> 
-      </p>
-      
-      <p>
-      <li><strong>Exploring Large-scale Financial Knowledge Graph for SMEs Supply Chain Mining</strong>
-      <br>
-      <strong>Youru Li</strong>, Zhenfeng Zhu, Linxun Chen, Bin Yang, Yaxi Wu, Xiaobo Guo, Bing Han and Yao Zhao
-      <br>
-      <em>IEEE Transactions on Knowledge and Data Engineering</em> 2023 | <a style="color: #447ec9" href="https://ieeexplore.ieee.org/document/10256685">paper</a> | <a style="color: #447ec9" href="https://github.com/LiYouru0228/MSCL">code</a>
-      </p>
-      
-      <p>
-      <li><strong>HGV4Risk: Hierarchical Global View-guided Sequence Representation Learning for Risk Prediction</strong>
-      <br>
-      <strong>Youru Li</strong>, Zhenfeng Zhu, Xiaobo Guo, Shaoshuai Li, Yuchen Yang and Yao Zhao
-      <br>
-      <em>ACM Transactions on Knowledge Discovery from Data</em> 2023 | <a style="color: #447ec9" href="https://dl.acm.org/doi/10.1145/3605895">paper</a> | <a style="color: #447ec9" href="https://github.com/LiYouru0228/HGV">code</a>
-      </p>
-      
-      <p>
-      <li><strong>Adversarial self-attentive time-variant neural networks for multi-step time series forecasting</strong>
-      <br>
-      Changxia Gao, Ning Zhang, <strong>Youru Li</strong>, Yan Lin and Huaiyu Wan
-      <br>
-      <em>Expert Systems with Applications </em> 2023 | <a style="color: #447ec9" href="https://www.sciencedirect.com/science/article/pii/S0957417423012241">paper</a> | <a style="color: #447ec9" href="https://github.com/chxiag/ASATVN">code</a>         
-      </p>
-    
-      <p>
-      <li><strong>Cooperative dual medical ontology representation learning for clinical assisted decision-making</strong>
-      <br>
-      Muhao Xu, Zhenfeng Zhu, <strong>Youru Li</strong>, Shuai Zheng, Linfeng Li, Haiyan Wu and Yao Zhao
-      <br>
-      <em>Computers in Biology and Medicine </em> 2023 | <a style="color: #447ec9" href="https://www.sciencedirect.com/science/article/pii/S0010482523006030">paper</a> | <a style="color: #447ec9" href="https://github.com/mhxu1998/CoDMO">code</a>       
-      </p>
-      
-      <p>
-      <li><strong>CED: A case-level explainable paramedical diagnosis via AdaGBDT</strong>
-      <br>
-      Zhenyu Guo, Muhao Xu, Yuchen Yang, <strong>Youru Li</strong>, Haiyan Wu, Zhenfeng Zhu and Yao Zhao
-      <br>
-      <em>Computers in Biology and Medicine </em> 2022 | <a style="color: #447ec9" href="https://www.sciencedirect.com/science/article/pii/S0010482522012082?dgc">paper</a>         
-      </p>
-      
-      <p>
-      <li><strong>Sylvester Equation Induced Collaborative Representation Learning for Recommendation</strong>
-      <br>
-      Xingyuan Li, Zhenfeng Zhu, Shuai Zheng, Zhizhe Liu, <strong>Youru Li</strong>, Xiaobo Guo, Deqiang Kong and Yao Zhao
-      <br>
-      <em>IEEE Transactions on Knowledge and Data Engineering </em> 2022 | <a style="color: #447ec9" href="https://ieeexplore.ieee.org/abstract/document/9933729">paper</a>         
-      </p>
-      
-      <p>
-      <li><strong>Self-attention-based time-variant neural networks for multi-step time series forecasting</strong>
-      <br>
-      Changxia Gao, Ning Zhang, <strong>Youru Li</strong>, Feng Bian and Huaiyu Wan
-      <br>
-      <em>Neural Computing and Applications </em> 2022 | <a style="color: #447ec9" href="data/ncaa.pdf">paper</a> | <a style="color: #447ec9" href="https://github.com/chxiag/SATVNN-cuda">code</a>
-      </p>
-
-      <p>
-      <li><strong>Deep learning based torsional nystagmus detection for dizziness and vertigo diagnosis</strong>
-      <br>
-      Wanlu Zhang, Haiyan Wu, Yang Liu, Shuai Zheng, Zhizhe Liu, <strong>Youru Li</strong>, Yao Zhao and Zhenfeng Zhu
-      <br>
-      <em>Biomedical Signal Processing and Control </em> 2021 | <a style="color: #447ec9" href="data/bspc.pdf">paper</a> 
-      </p>
-
-      <p>
-      <li><strong>Learning Dynamic User Interest Sequence in Knowledge Graphs for Click-Through Rate Prediction</strong>
-      <br>
-      <strong>Youru Li</strong>, Xiaobo Guo, Wenfang Lin, Mingjie Zhong, Qunwei Li, Zhongyi Liu, Wenliang Zhong, Zhenfeng Zhu
-      <br>
-      <em>IEEE Transactions on Knowledge and Data Engineering </em> 2021 | <a style="color: #447ec9" href="data/TKDE-21.pdf">paper</a> 
-      </p>
-
-      <p>
-      <li><strong>DKEN: Deep knowledge-enhanced network for recommender systems</strong>
-      <br>
-      Xiaobo Guo, Wenfang Lin, <strong>Youru Li</strong>, Zhongyi Liu, Lin Yang, Shuliang Zhao, Zhenfeng Zhu
-      <br>
-      <em>Information Sciences </em> 2020 | <a style="color: #447ec9" href="data/dken.pdf">paper</a> 
-      </p>
-
-      <p>
-      <li><strong>CCAE: Cross-field categorical attributes embedding for cancer clinical endpoint prediction</strong>
-      <br>
-      <strong>Youru Li</strong>, Zhenfeng Zhu, Haiyan Wu, Silu Ding, Yao Zhao
-      <br>
-      <em>Artificial Intelligence in Medicine </em> 2020 | <a style="color: #447ec9" href="data/ccae.pdf">paper</a> 
-      </p>
-
-      <p>
-      <li><strong>EA-LSTM: Evolutionary attention-based LSTM for time series prediction</strong>
-      <br>
-      <strong>Youru Li</strong>, Zhenfeng Zhu, Deqiang Kong, Hua Han, Yao Zhao
-      <br>
-      <em>Knowledge-Based Systems </em> 2019 | <a style="color: #447ec9" href="data/kbs.pdf">paper</a> | <a style="color: #447ec9" href="https://github.com/LiYouru0228/EA-LSTM">code</a> <font color="#FF0000">(ESI Highly Cited Paper)</font> 
-      </p>
-
-      <p>
-      <li><strong>GBDT based railway accident type prediction and cause analysis (in Chinese)</strong>
-      <br>
-      Minhui Zhong, Wanlu Zhang, <strong>Youru Li</strong>, Zhenfeng Zhu, Yao Zhao
-      <br>
-      <em>Acta Autom. Sin </em> 2022 | <a style="color: #447ec9" href="data/Acta.pdf">paper</a> <font color="#FF0000">(CNKI 2011-2022 High Impact Papers)</font> 
-      </p>
-
-      <p>
-      <li><strong>Fault Diagnosis Technology of Inter-shaft Bearing Based on EMD Fuzzy Entropy and Consultative Decision Fusion Model (in Chinese)</strong>
-      <br>
-      Wang Zhi, <strong>Youru Li</strong>, Tian Jing, Liu Lili, Li Jikai
-      <br>
-      <em>Aeroengine </em> 2019 | <a style="color: #447ec9" href="data/Aeroengine.pdf">paper</a> 
-      </p>
-
-      <p>
-      <li><strong>Fault diagnosis of aero-engine inter-shaft bearing based on Deep-GBM (in Chinese)</strong>
-      <br>
-      Tian Jing, <strong>Youru Li</strong>, Yanting Ai
-      <br>
-      <em>Journal of Aerospace Power </em> 2019 | <a style="color: #447ec9" href="data/jap.pdf">paper</a> 
-      </p>
-
-      <p>
-      <li><strong>The Application Study on Improved Distributed Genetic Algorithm in Computer Games (in Chinese)</strong>
-      <br>
-      Xueping Liu, <strong>Youru Li</strong>
-      <br>
-      <em>Transactions of Beijing Institute of Technology </em> 2017 | <a style="color: #447ec9" href="data/tbit.pdf">paper</a> 
-      </p>
-
-
-    </ol>
-
-    </p>
-  </div>
-
-<!-- The Services Section -->
-  <div class="w3-container w3-light-grey w3-padding-32" id="service">
-    <h2>Services</h2>
-      <p><li> Invited Reviewers of <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=34">IEEE TPAMI</a>, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=69">IEEE TKDE</a>, <a href="https://dl.acm.org/journal/tkdd">ACM TKDD</a>, <a href="https://dl.acm.org/journal/TIST">ACM TIST</a>, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=71">IEEE TPDS</a>, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5962385">IEEE TNNLS</a>, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6221036">IEEE TCYB</a>, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6979">IEEE TITS</a>, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6687317">IEEE TBD</a>, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6570650">IEEE TCSS</a>, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=9424">IEEE TII</a>, <a href="https://cis.ieee.org/publications/ieee-transactions-on-artificial-intelligence">IEEE TAI</a>, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6221021">IEEE TSMC</a>, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=91">IEEE TFS</a>, <a href="https://cis.ieee.org/publications/t-emerging-topics-in-ci">IEEE TETCI</a>, <a href="https://www.sciencedirect.com/journal/information-processing-and-management">Information Processing & Management </a>, <a href="https://www.sciencedirect.com/journal/knowledge-based-systems">Knowledge-Based Systems</a>, <a href="https://pubs.acs.org/journal/asrmcd">ACS RM</a>, <a href="https://digital-library.theiet.org/content/journals/iet-its">IET ITS</a>, <a href="https://www.tandfonline.com/toc/ttrb20/current">Transportmetrica Part B</a>, <a href="http://www.tandfonline.com/toc/gits20/current">Journal of Intelligent Transportation Systems</a>, <a href="hhttps://ieeexplore.ieee.org/xpl/aboutJournal.jsp?punumber=6287639">IEEE Access</a>, <a href="hhttps://ieeexplore.ieee.org/xpl/aboutJournal.jsp?punumber=6287639">Journal of Intelligent Transportation Systems
-</a>, <a href="https://www.tandfonline.com/toc/tinf20/current">INFOR: Information Systems and Operational Research</a>, <a href="https://www.hindawi.com/journals/jat/">Journal of Advanced Transportation</a>, <a href="https://www.tandfonline.com/journals/gits20">International Journal of Intelligent Systems</a>, <a href="https://www.hindawi.com/journals/cin/">Computational Intelligence and Neuroscience</a>, etc.</p>
-      
-      <p><li> Program Committee Members of <a href="https://www2024.thewebconf.org/">TheWebConf(WWW) 2022, 2023, 2024, 2025</a>, <a href="https://2024.ieeeicassp.org/">ICASSP 2024, 2025</a> etc.</p>
-  </div>
-
-  <!-- The Awards Section -->
-  <div class="w3-container w3-padding-32" id="award">
-    <h2>Awards</h2>
-    <p><li> 2024, <a href="http://103.95.70.85:81/index_detail.aspx?id=28">Second Prize for Technological Progress of the Chinese Association for Artificial Intelligence (CAAI) WU Wenjun AI Science and Technology Award</a></p>
-    <p><li> 2023, <a href="https://yb.cie.org.cn/list_223/13229.html">CIE Excellent Doctoral Dissertation Forum Best Poster Award</p>
-    <p><li> 2023, National Scholarship for Ph.D Students</p>
-    <p><li> 2022, First-class Ph.D. Academic Scholarship of BJTU </a></p>   
-    <p><li> 2021, <a href="https://www.cie-info.org.cn/site/content/4061.html">Chinese Institute of Electronics (CIE) Excellent Master Dissertation Award</a></p>               
-    <p><li> 2020, Excellent Master Dissertation of Beijing Jiaotong University</p> 
-    <p><li> 2020, Excellent graduate in Beijing, Department of Education of Beijing, 2020</p> 
-    <p><li> 2020, <a href="http://news.bjtu.edu.cn/info/1044/32481.htm">BJTU Top Grade Scholarship - ZHIXING Scholarship Nomination</a> (20 graduates per year)</p> 
-    <p><li> 2019, National Scholarship for Graduate Students</p>
-    <p><li> 2018, <a href="https://github.com/LiYouru0228/KDD_CUP_2018">ACM KDD Cup track Top 20</a></p> 
-    <p><li> 2015, <a href="http://computergames.caai.cn/index.html">The 9th China Computer Gaming Championship</a>, International Checkers (10*10), third runner-up.</p> 
-
-  </div>  
-
-  <div class="w3-light-grey w3-center w3-padding-24">
-
-    Welcome to use this website's <a href="https://liyouru0228.github.io/HomePage/">source code</a>, just add a link back to here. <a href="https://www.liyouru.site/">&#10025;</a></br>
-
-  <!-- Default Statcounter code for Yunhe Wang's Homepage
-  https://www.wangyunhe.site -->
-  No.
-  <script type="text/javascript">
-  var sc_project=12347113; 
-  var sc_invisible=0; 
-  var sc_security="21aca5d1"; 
-  var sc_https=1; 
-  var scJsHost = "https://";
-  document.write("<sc"+"ript type='text/javascript' src='" + scJsHost+
-  "statcounter.com/counter/counter.js'></"+"script>");
-  </script> Visitor Since Feb 2022. Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a>
-  <noscript>
-    <div class="statcounter"><a title="Web Analytics Made Easy -
-  StatCounter" href="https://statcounter.com/" target="_blank"><img
-  class="statcounter" src="https://c.statcounter.com/12347113/0/21aca5d1/0/"
-  alt="Web Analytics Made Easy - StatCounter"></a></div>
-  </noscript>
-  <!-- End of Statcounter Code -->
-
-  </div>
-
-  <!-- End page content -->
-</div>
-
-<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=4HfSi8cyTm6Bgu0uWlBM5asAhfwLLpCmQC9YOvPqhrw&cl=ffffff&w=a"></script>
-
-<script>
-// Accordion 
-function myAccFunc() {
-  var x = document.getElementById("demoAcc");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-
-// Click on the "Jeans" link on page load to open the accordion for demo purposes
-document.getElementById("myBtn").click();
-
-
-// Open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("myOverlay").style.display = "block";
-}
- 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-  document.getElementById("myOverlay").style.display = "none";
-}
-</script>
-
+    <script>
+        // Mobile Navigation Toggle
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-menu').classList.remove('active');
+            });
+        });
+        
+        // Tab functionality for publications
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                button.classList.add('active');
+                document.getElementById(button.dataset.tab).classList.add('active');
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header shadow on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if(window.scrollY > 50) {
+                header.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.05)';
+            }
+        });
+    </script>
 </body>
 </html>
