@@ -325,7 +325,14 @@
     }
 
 
-      /* 项目展示布局优化 - 左图右文 */
+        /* 项目图片大小控制参数 - 在这里调整图片尺寸 */
+  :root {
+    --project-image-width: 35%;      /* 图片容器宽度百分比 */
+    --project-image-max-height: 280px; /* 图片最大高度 */
+    --project-image-max-width: 400px;  /* 图片最大宽度（移动端） */
+  }
+  
+  /* 项目展示布局优化 - 左图右文 */
   .project-section {
     margin-bottom: 50px;
   }
@@ -339,16 +346,16 @@
   }
   
   .project-image-wrapper {
-    flex: 0 0 35%; /* 从40%减少到35% */
-    max-width: 35%;
+    flex: 0 0 var(--project-image-width);
+    max-width: var(--project-image-width);
     position: relative;
   }
   
   .project-image-wrapper img {
     width: 100%;
     height: auto;
-    max-height: 300px; /* 添加最大高度限制 */
-    object-fit: contain; /* 确保图片完整显示 */
+    max-height: var(--project-image-max-height);
+    object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     border: 1px solid #e0e0e0;
@@ -373,7 +380,7 @@
     font-style: italic;
   }
   
-  /* 响应式调整 - 修改移动端图片大小 */
+  /* 响应式调整 */
   @media (max-width: 992px) {
     .project-main {
       flex-direction: column;
@@ -390,8 +397,8 @@
     }
     
     .project-image-wrapper img {
-      max-height: 250px; /* 移动端也限制最大高度 */
-      max-width: 400px; /* 添加最大宽度限制 */
+      max-height: var(--project-image-max-height);
+      max-width: var(--project-image-max-width);
       margin: 0 auto;
       display: block;
     }
@@ -403,8 +410,8 @@
     }
     
     .project-image-wrapper img {
-      max-height: 200px;
-      max-width: 300px;
+      max-height: 220px;
+      max-width: 320px;
     }
   }
   }
