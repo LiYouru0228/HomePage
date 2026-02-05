@@ -325,7 +325,7 @@
     }
 
 
-        /* 项目展示布局优化 - 左图右文 */
+      /* 项目展示布局优化 - 左图右文 */
   .project-section {
     margin-bottom: 50px;
   }
@@ -339,14 +339,16 @@
   }
   
   .project-image-wrapper {
-    flex: 0 0 40%;
-    max-width: 40%;
+    flex: 0 0 35%; /* 从40%减少到35% */
+    max-width: 35%;
     position: relative;
   }
   
   .project-image-wrapper img {
     width: 100%;
     height: auto;
+    max-height: 300px; /* 添加最大高度限制 */
+    object-fit: contain; /* 确保图片完整显示 */
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     border: 1px solid #e0e0e0;
@@ -362,99 +364,16 @@
     min-width: 300px;
   }
   
-  .project-number {
-    display: inline-block;
-    background: linear-gradient(135deg, #1976d2 0%, #0d47a1 100%);
-    color: white;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
+  /* 新增：图片说明文字 */
+  .image-caption {
     text-align: center;
-    line-height: 36px;
-    font-weight: bold;
-    margin-right: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .project-title {
-    font-size: 1.3em;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #e0e0e0;
-    color: #333;
-  }
-  
-  .project-description {
-    line-height: 1.6;
-    color: #444;
-    margin-bottom: 15px;
-  }
-  
-  .project-highlight {
-    background: #f0f7ff;
-    padding: 15px;
-    border-radius: 6px;
-    border-left: 4px solid #1976d2;
-    margin-top: 20px;
-  }
-  
-  .highlight-title {
-    font-weight: bold;
-    color: #1976d2;
-    margin-bottom: 10px;
-    font-size: 1.1em;
-  }
-  
-  .highlight-content {
-    color: #444;
-    line-height: 1.6;
-  }
-  
-  .project-techniques {
-    margin-top: 20px;
-    padding: 15px;
-    background: #f9f9f9;
-    border-radius: 6px;
-    border: 1px solid #e0e0e0;
-  }
-  
-  .techniques-title {
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .technique-list {
-    list-style-type: none;
-    padding-left: 0;
-  }
-  
-  .technique-list li {
-    padding: 8px 0;
-    border-bottom: 1px dashed #ddd;
-    display: flex;
-    align-items: flex-start;
-  }
-  
-  .technique-list li:last-child {
-    border-bottom: none;
-  }
-  
-  .technique-number {
-    background: #e3f2fd;
-    color: #1976d2;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 24px;
     font-size: 0.9em;
-    font-weight: bold;
-    margin-right: 10px;
-    flex-shrink: 0;
+    color: #666;
+    margin-top: 8px;
+    font-style: italic;
   }
   
-  /* 响应式调整 */
+  /* 响应式调整 - 修改移动端图片大小 */
   @media (max-width: 992px) {
     .project-main {
       flex-direction: column;
@@ -471,7 +390,8 @@
     }
     
     .project-image-wrapper img {
-      max-width: 600px;
+      max-height: 250px; /* 移动端也限制最大高度 */
+      max-width: 400px; /* 添加最大宽度限制 */
       margin: 0 auto;
       display: block;
     }
@@ -482,26 +402,9 @@
       margin-bottom: 30px;
     }
     
-    .project-title {
-      font-size: 1.2em;
-    }
-    
-    .project-number {
-      width: 32px;
-      height: 32px;
-      line-height: 32px;
-      font-size: 0.9em;
-    }
-  }
-  }
-  
-  @media (max-width: 768px) {
-    .project-item {
-      padding: 15px;
-    }
-    
-    .project-title {
-      font-size: 1.2em;
+    .project-image-wrapper img {
+      max-height: 200px;
+      max-width: 300px;
     }
   }
   }
@@ -944,9 +847,11 @@
       <div class="project-main">
         <div class="project-image-wrapper">
           <img alt="Knowledge-enhanced Representation Learning for Structured Data" src="images/pro1.png">
+          <div class="image-caption">Knowledge-enhanced Representation Learning Framework</div>
         </div>
         
         <div class="project-content-wrapper">
+          <!-- 原有内容保持不变 -->
           <div class="project-title">
             <span class="project-number">1</span>
             Alibaba Innovative Research Foundation (talent plan for Ph.D student)
@@ -999,9 +904,11 @@
       <div class="project-main">
         <div class="project-image-wrapper">
           <img alt="Spatio-temporal Data Mining and Prediction Modeling" src="images/pro2.png">
+          <div class="image-caption">Spatio-temporal Data Mining Framework</div>
         </div>
         
         <div class="project-content-wrapper">
+          <!-- 原有内容保持不变 -->
           <div class="project-title">
             <span class="project-number">2</span>
             Fundamental Research Fund Project of Central Universities of China
