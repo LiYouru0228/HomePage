@@ -66,6 +66,44 @@
     flex: 1;
     min-width: 300px;
   }
+
+  /* 个人介绍滚动框样式 */
+.profile-text-scroll {
+  max-height: 280px; /* 根据照片高度调整 */
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-bottom: 15px;
+}
+
+.profile-text-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.profile-text-scroll::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 3px;
+}
+
+.profile-text-scroll::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 3px;
+}
+
+.profile-text-scroll::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+/* 调整profile-info布局 */
+.profile-info {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-links {
+  margin-top: 20px;
+}
   
   /* 新闻滚动区域 */
   .news-container {
@@ -254,23 +292,26 @@
   <div class="w3-container w3-padding-32" id="home">
     <div class="profile-container">
       <div class="profile-photo">
-        <img alt="profile photo" src="images/lyr.jpeg">
+        <img alt="profile photo" src="images/lyr.jpg">
       </div>
       <div class="profile-info">
         <h1>Youru Li (李有儒)</h1>
-        <h4>Ph.D., Professor, Ph.D Supervisor</h4>
+        <h4>Ph.D., University-Appointed Professor, Doctoral Supervisor</h4>
         
-        <p class="w3-justify">
-          Youru Li is a University-Appointed Professor and Doctoral Supervisor in the Department of Computer Science and Technology, College of Computer Science, Beijing University of Technology. He serves as an Executive Committee Member of the Digital Medicine Branch of the China Computer Federation. He received his M.E. and Ph.D. degrees in Computer Science from Beijing Jiaotong University in 2020 and 2025, respectively. He previously worked as a Machine Learning Algorithm Engineer and FinTech Algorithm Visiting Researcher at Alibaba and Ant Group. He has been selected for several talent support programs, including the Young Elite Talent Program of Beijing University of Technology's High-level Talent Development Plan and the Doctoral Special Plan of the Young Elite Scientists Sponsorship Program by China Association for Science and Technology.
-        </p>
-        
-        <p class="w3-justify">
-          His research interests include spatio-temporal data mining, large-scale knowledge graph construction and reasoning, personalized information recommendation, large language models, and their applications in digital intelligence services such as clinical medicine and financial security. He has presided over or participated in several research projects, including the National Key R&D Program of China "New Generation Artificial Intelligence" under the Ministry of Science and Technology, National Natural Science Foundation of China, Beijing Natural Science Foundation, and Fundamental Research Funds for the Central Universities.
-        </p>
-        
-        <p class="w3-justify">
-          He has received several research awards, including the Second Prize for Technological Progress of the Chinese Association for Artificial Intelligence (CAAI) WU Wenjun AI Science and Technology Award, the Chinese Institute of Electronics (CIE) Excellent Master Dissertation Award, and the CIE Excellent Doctoral Dissertation Forum Best Poster Award. He has published over 30 academic papers in top-tier journals and conferences in data mining and artificial intelligence, such as TKDE, TPAMI, TIM, TKDD, TOMM, TORS, KDD, AAAI, and MICCAI. His first-authored papers have been selected as ESI Highly Cited Papers, with the highest citation count exceeding 500. He has applied for/been granted more than 10 national invention patents.
-        </p>
+        <!-- 添加可滚动的个人介绍 -->
+        <div class="profile-text-scroll">
+          <p class="w3-justify">
+            Youru Li is a University-Appointed Professor and Doctoral Supervisor in the Department of Computer Science and Technology, College of Computer Science, Beijing University of Technology. He serves as an Executive Committee Member of the Digital Medicine Branch of the China Computer Federation. He received his M.E. and Ph.D. degrees in Computer Science from Beijing Jiaotong University in 2020 and 2025, respectively. He previously worked as a Machine Learning Algorithm Engineer and FinTech Algorithm Visiting Researcher at Alibaba and Ant Group. He has been selected for several talent support programs, including the Young Elite Talent Program of Beijing University of Technology's High-level Talent Development Plan and the Doctoral Special Plan of the Young Elite Scientists Sponsorship Program by China Association for Science and Technology.
+          </p>
+          
+          <p class="w3-justify">
+            His research interests include spatio-temporal data mining, large-scale knowledge graph construction and reasoning, personalized information recommendation, large language models, and their applications in digital intelligence services such as clinical medicine and financial security. He has presided over or participated in several research projects, including the National Key R&D Program of China "New Generation Artificial Intelligence" under the Ministry of Science and Technology, National Natural Science Foundation of China, Beijing Natural Science Foundation, and Fundamental Research Funds for the Central Universities.
+          </p>
+          
+          <p class="w3-justify">
+            He has received several research awards, including the Second Prize for Technological Progress of the Chinese Association for Artificial Intelligence (CAAI) WU Wenjun AI Science and Technology Award, the Chinese Institute of Electronics (CIE) Excellent Master Dissertation Award, and the CIE Excellent Doctoral Dissertation Forum Best Poster Award. He has published over 30 academic papers in top-tier journals and conferences in data mining and artificial intelligence, such as TKDE, TPAMI, TIM, TKDD, TOMM, TORS, KDD, AAAI, and MICCAI. His first-authored papers have been selected as ESI Highly Cited Papers, with the highest citation count exceeding 500. He has applied for/been granted more than 10 national invention patents.
+          </p>
+        </div>
         
         <p class="w3-center w3-margin-top">
           <a href="mailto:liyouru@bjtu.edu.cn" class="w3-button w3-blue w3-round">Email</a> &nbsp/&nbsp
