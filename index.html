@@ -40,6 +40,33 @@
     margin-right: auto;
   }
   
+  /* 个人简介布局 */
+  .profile-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .profile-photo {
+    flex: 0 0 280px;
+    max-width: 280px;
+  }
+  
+  .profile-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
+  }
+  
+  .profile-info {
+    flex: 1;
+    min-width: 300px;
+  }
+  
   /* 新闻滚动区域 */
   .news-container {
     max-height: 400px;
@@ -66,32 +93,95 @@
     background: #555;
   }
   
-  /* 课题组卡片样式 */
-  .group-card {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border-radius: 10px;
-    padding: 25px;
+  /* 课题组样式优化 */
+  .group-section {
     margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   }
   
-  .member-category {
-    margin-bottom: 25px;
+  .group-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #2196F3;
+  }
+  
+  .group-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .phd-icon {
+    background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+  }
+  
+  .master-icon {
+    background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+  }
+  
+  .undergrad-icon {
+    background: linear-gradient(135deg, #FF9800 0%, #EF6C00 100%);
   }
   
   .member-list {
     list-style-type: none;
+    padding-left: 20px;
+  }
+  
+  .member-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .member-item:last-child {
+    border-bottom: none;
+  }
+  
+  .member-year {
+    display: inline-block;
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-right: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .member-name {
+    font-weight: bold;
+    margin-right: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .member-research {
+    color: #666;
+    font-size: 0.95em;
+    flex-basis: 100%;
+    margin-top: 5px;
     padding-left: 0;
   }
   
-  .member-list li {
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
-  
-  .member-list li:last-child {
-    border-bottom: none;
+  .research-tag {
+    display: inline-block;
+    background: #f5f5f5;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.85em;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border-left: 3px solid #2196F3;
   }
   
   /* 响应式调整 */
@@ -99,6 +189,16 @@
     .main-content {
       padding: 0 15px;
       margin-top: 70px;
+    }
+    
+    .profile-container {
+      flex-direction: column;
+    }
+    
+    .profile-photo {
+      flex: 0 0 auto;
+      max-width: 250px;
+      margin: 0 auto;
     }
     
     .news-container {
@@ -151,70 +251,217 @@
 <div class="main-content">
 
   <!-- Home Section -->
-  <div class="w3-container w3-center w3-padding-32" id="home">
-    <img style="width: 18%;max-width: 320px; border-radius: 50%;" alt="profile photo" src="images/lyr.jpeg">
-    <h1>Youru Li (李有儒)</h1>
-    <p class="w3-justify" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;max-width:800px">
-      Youru Li is a Professor with the College of Computer Science, Beijing University of Technology, Beijing, China. He has received the Ph.D. and M.E. degrees at the Department of Computer Science, <a href="http://en.njtu.edu.cn/">Beijing Jiaotong University (BJTU)</a>, Beijing, China in Jun. 2025 and Jun. 2020, respectively. From Jun. 2020 to Aug. 2021, he worked for <a href="https://www.antgroup.com/en">Ant Financial</a>, Alibaba, as a machine learning algorithm engineer. His current research interests include sequence data mining, knowledge graph and their applications on Health Informatic, RecSys and FinTech. He has published over 30 research papers in refereed conferences and journals (e.g., TPAMI, TKDE, TKDD, TORS, KDD, AAAI, MICCAI). He has received the <a href="https://www.cie.org.cn/list_43/4061.html">Chinese Institute of Electronics (CIE) Excellent Master Dissertation Award</a> in 2020 and the <a href="http://103.95.70.85:81/index_detail.aspx?id=27"> Second Prize for Technological Progress of Chinese Association for Artificial Intelligence (CAAI) WU Wenjun AI Science and Technology Award</a> in 2023. He has been supported by <a href="https://www.gov.cn/yaowen/liebiao/202410/content_6979235.htm"> the Inaugural Young Elite Scientists Sponsorship Program by CAST, Doctoral Student Special Plan. (Supported by the Chinese Institute of Electronics (CIE)) </a>. 
-    </p>
-    <p class="w3-center">
-      <a href="mailto:liyouru@bjut.edu.cn" class="w3-button w3-blue w3-round">Email</a> &nbsp/&nbsp
-      <a href="https://scholar.google.com/citations?user=s9FUB74AAAAJ&hl=zh-CN" class="w3-button w3-blue w3-round">Google Scholar</a> &nbsp/&nbsp
-      <a href="https://orcid.org/0000-0002-9326-9863" class="w3-button w3-blue w3-round"> ORCID </a> &nbsp/&nbsp
-      <a href="https://dblp.org/pid/230/4004.html" class="w3-button w3-blue w3-round"> DBLP </a> &nbsp/&nbsp
-      <a href="https://github.com/LiYouru0228" class="w3-button w3-blue w3-round"> GitHub </a>
-    </p>
+  <div class="w3-container w3-padding-32" id="home">
+    <div class="profile-container">
+      <div class="profile-photo">
+        <img alt="profile photo" src="images/lyr.jpg">
+      </div>
+      <div class="profile-info">
+        <h1>Youru Li (李有儒)</h1>
+        <h4>Ph.D., University-Appointed Professor, Doctoral Supervisor</h4>
+        
+        <p class="w3-justify">
+          Youru Li is a University-Appointed Professor and Doctoral Supervisor in the Department of Computer Science and Technology, College of Computer Science, Beijing University of Technology. He serves as an Executive Committee Member of the Digital Medicine Branch of the China Computer Federation. He received his M.E. and Ph.D. degrees in Computer Science from Beijing Jiaotong University in 2020 and 2025, respectively. He previously worked as a Machine Learning Algorithm Engineer and FinTech Algorithm Visiting Researcher at Alibaba and Ant Group. He has been selected for several talent support programs, including the Young Elite Talent Program of Beijing University of Technology's High-level Talent Development Plan and the Doctoral Special Plan of the Young Elite Scientists Sponsorship Program by China Association for Science and Technology.
+        </p>
+        
+        <p class="w3-justify">
+          His research interests include spatio-temporal data mining, large-scale knowledge graph construction and reasoning, personalized information recommendation, large language models, and their applications in digital intelligence services such as clinical medicine and financial security. He has presided over or participated in several research projects, including the National Key R&D Program of China "New Generation Artificial Intelligence" under the Ministry of Science and Technology, National Natural Science Foundation of China, Beijing Natural Science Foundation, and Fundamental Research Funds for the Central Universities.
+        </p>
+        
+        <p class="w3-justify">
+          He has received several research awards, including the Second Prize for Technological Progress of the Chinese Association for Artificial Intelligence (CAAI) WU Wenjun AI Science and Technology Award, the Chinese Institute of Electronics (CIE) Excellent Master Dissertation Award, and the CIE Excellent Doctoral Dissertation Forum Best Poster Award. He has published over 30 academic papers in top-tier journals and conferences in data mining and artificial intelligence, such as TKDE, TPAMI, TIM, TKDD, TOMM, TORS, KDD, AAAI, and MICCAI. His first-authored papers have been selected as ESI Highly Cited Papers, with the highest citation count exceeding 500. He has applied for/been granted more than 10 national invention patents.
+        </p>
+        
+        <p class="w3-center w3-margin-top">
+          <a href="mailto:liyouru@bjtu.edu.cn" class="w3-button w3-blue w3-round">Email</a> &nbsp/&nbsp
+          <a href="https://scholar.google.com/citations?user=s9FUB74AAAAJ&hl=zh-CN" class="w3-button w3-blue w3-round">Google Scholar</a> &nbsp/&nbsp
+          <a href="https://orcid.org/0000-0002-9326-9863" class="w3-button w3-blue w3-round"> ORCID </a> &nbsp/&nbsp
+          <a href="https://dblp.org/pid/230/4004.html" class="w3-button w3-blue w3-round"> DBLP </a> &nbsp/&nbsp
+          <a href="https://github.com/LiYouru0228" class="w3-button w3-blue w3-round"> GitHub </a>
+        </p>
+      </div>
+    </div>
   </div>
 
   <!-- Group Section -->
   <div class="w3-container w3-padding-32" id="group">
     <h2>Research Group</h2>
-    <div class="group-card">
-      <h3>Data and Knowledge Computing Research Group</h3>
+    <div class="w3-panel w3-border w3-border-blue w3-round-large w3-padding">
+      <h3 class="w3-center">Data and Knowledge Computing Research Group</h3>
       
-      <div class="member-category">
-        <h4>PhD Students</h4>
+      <!-- PhD Students -->
+      <div class="group-section">
+        <div class="group-title">
+          <div class="group-icon phd-icon">PhD</div>
+          <h4>PhD Students</h4>
+        </div>
         <ul class="member-list">
-          <li><strong>Class 2026:</strong> 
-            <br>Chen Liang - Research: AI4Science, Intelligent Healthcare
+          <li class="member-item">
+            <span class="member-year">2026</span>
+            <span class="member-name">Chen Liang</span>
+            <div class="member-research">
+              <span class="research-tag">AI4Science</span>
+              <span class="research-tag">Intelligent Healthcare</span>
+            </div>
           </li>
         </ul>
       </div>
       
-      <div class="member-category">
-        <h4>Master Students</h4>
+      <!-- Master Students -->
+      <div class="group-section">
+        <div class="group-title">
+          <div class="group-icon master-icon">MS</div>
+          <h4>Master Students</h4>
+        </div>
         <ul class="member-list">
-          <li><strong>Class 2024:</strong>
-            <br>Yixuan Fu - Research: Knowledge Graph, Spatio-temporal Large Models
-            <br>Ji-ao Zhang - Research: Spatial Data Intelligence, Smart Construction
+          <!-- 2024级 -->
+          <li class="member-item">
+            <span class="member-year">2024</span>
+            <span class="member-name">Yixuan Fu</span>
+            <div class="member-research">
+              <span class="research-tag">Knowledge Graph</span>
+              <span class="research-tag">Spatio-temporal Large Models</span>
+            </div>
           </li>
-          <li><strong>Class 2025:</strong>
-            <br>Jing Gao - Research: Knowledge Graph, Large Models, Recommendation Systems
-            <br>Juhuan Li - Research: Spatio-temporal Data Mining, Generative Recommendation
-            <br>Haomin Guo - Research: Multimodal Intelligence, Intelligent Healthcare
-            <br>Jianrui Hui - Research: Trustworthy Recommendation Systems
-            <br>Wenjie Tian - Research: Spatio-temporal Data Mining, Intelligent Healthcare
+          <li class="member-item">
+            <span class="member-year">2024</span>
+            <span class="member-name">Jiao Zhang</span>
+            <div class="member-research">
+              <span class="research-tag">Spatial Data Intelligence</span>
+              <span class="research-tag">Smart Construction</span>
+            </div>
           </li>
-          <li><strong>Class 2026:</strong>
-            <br>Ruofei Zhang - Research: Time Series Foundation Models, Intelligent Healthcare
-            <br>Kaijin Zhang - Research: Knowledge Graph, Spatio-temporal Large Models
-            <br>Zhiyuan Chen - Research: Multimodal Intelligence, Intelligent Healthcare
+          
+          <!-- 2025级 -->
+          <li class="member-item">
+            <span class="member-year">2025</span>
+            <span class="member-name">Jing Gao</span>
+            <div class="member-research">
+              <span class="research-tag">Knowledge Graph</span>
+              <span class="research-tag">Large Models</span>
+              <span class="research-tag">Recommendation Systems</span>
+            </div>
+          </li>
+          <li class="member-item">
+            <span class="member-year">2025</span>
+            <span class="member-name">Juhuan Li</span>
+            <div class="member-research">
+              <span class="research-tag">Spatio-temporal Data Mining</span>
+              <span class="research-tag">Generative Recommendation</span>
+            </div>
+          </li>
+          <li class="member-item">
+            <span class="member-year">2025</span>
+            <span class="member-name">Haomin Guo</span>
+            <div class="member-research">
+              <span class="research-tag">Multimodal Intelligence</span>
+              <span class="research-tag">Intelligent Healthcare</span>
+            </div>
+          </li>
+          <li class="member-item">
+            <span class="member-year">2025</span>
+            <span class="member-name">Jianrui Hui</span>
+            <div class="member-research">
+              <span class="research-tag">Trustworthy Recommendation Systems</span>
+            </div>
+          </li>
+          <li class="member-item">
+            <span class="member-year">2025</span>
+            <span class="member-name">Wenjie Tian</span>
+            <div class="member-research">
+              <span class="research-tag">Spatio-temporal Data Mining</span>
+              <span class="research-tag">Intelligent Healthcare</span>
+            </div>
+          </li>
+          
+          <!-- 2026级 -->
+          <li class="member-item">
+            <span class="member-year">2026</span>
+            <span class="member-name">Ruofei Zhang</span>
+            <div class="member-research">
+              <span class="research-tag">Time Series Foundation Models</span>
+              <span class="research-tag">Intelligent Healthcare</span>
+            </div>
+          </li>
+          <li class="member-item">
+            <span class="member-year">2026</span>
+            <span class="member-name">Kaijin Zhang</span>
+            <div class="member-research">
+              <span class="research-tag">Knowledge Graph</span>
+              <span class="research-tag">Spatio-temporal Large Models</span>
+            </div>
+          </li>
+          <li class="member-item">
+            <span class="member-year">2026</span>
+            <span class="member-name">Zhiyuan Chen</span>
+            <div class="member-research">
+              <span class="research-tag">Multimodal Intelligence</span>
+              <span class="research-tag">Intelligent Healthcare</span>
+            </div>
           </li>
         </ul>
       </div>
       
-      <div class="member-category">
-        <h4>Undergraduate Students</h4>
+      <!-- Undergraduate Students -->
+      <div class="group-section">
+        <div class="group-title">
+          <div class="group-icon undergrad-icon">UG</div>
+          <h4>Undergraduate Students</h4>
+        </div>
         <ul class="member-list">
-          <li><strong>Class 2024:</strong>
-            <br>Yinuo Zhang - Research: Time Series Foundation Models, Intelligent Healthcare
-            <br>Mingzhe Li - Research: Knowledge Graph, Large Models, Recommendation Systems
+          <!-- 2024级 -->
+          <li class="member-item">
+            <span class="member-year">2024</span>
+            <span class="member-name">Yinuo Zhang</span>
+            <div class="member-research">
+              <span class="research-tag">Time Series Foundation Models</span>
+              <span class="research-tag">Intelligent Healthcare</span>
+            </div>
           </li>
-          <li><strong>Class 2025:</strong>
-            <br>Ruosen Wang - Research: Knowledge Graph, Large Models, Recommendation Systems
-            <br>Yuchen Wu - Research: Knowledge Graph, Large Models, Recommendation Systems
-            <br>Jiahe Li - Research: Time Series Foundation Models, Intelligent Healthcare
-            <br>Tianyu Chen - Research: Time Series Foundation Models, Intelligent Healthcare
+          <li class="member-item">
+            <span class="member-year">2024</span>
+            <span class="member-name">Mingzhe Li</span>
+            <div class="member-research">
+              <span class="research-tag">Knowledge Graph</span>
+              <span class="research-tag">Large Models</span>
+              <span class="research-tag">Recommendation Systems</span>
+            </div>
+          </li>
+          
+          <!-- 2025级 -->
+          <li class="member-item">
+            <span class="member-year">2025</span>
+            <span class="member-name">Ruosen Wang</span>
+            <div class="member-research">
+              <span class="research-tag">Knowledge Graph</span>
+              <span class="research-tag">Large Models</span>
+              <span class="research-tag">Recommendation Systems</span>
+            </div>
+          </li>
+          <li class="member-item">
+            <span class="member-year">2025</span>
+            <span class="member-name">Yuchen Wu</span>
+            <div class="member-research">
+              <span class="research-tag">Knowledge Graph</span>
+              <span class="research-tag">Large Models</span>
+              <span class="research-tag">Recommendation Systems</span>
+            </div>
+          </li>
+          <li class="member-item">
+            <span class="member-year">2025</span>
+            <span class="member-name">Jiahe Li</span>
+            <div class="member-research">
+              <span class="research-tag">Time Series Foundation Models</span>
+              <span class="research-tag">Intelligent Healthcare</span>
+            </div>
+          </li>
+          <li class="member-item">
+            <span class="member-year">2025</span>
+            <span class="member-name">Tianyu Chen</span>
+            <div class="member-research">
+              <span class="research-tag">Time Series Foundation Models</span>
+              <span class="research-tag">Intelligent Healthcare</span>
+            </div>
           </li>
         </ul>
       </div>
@@ -305,30 +552,309 @@
     </div>
   </div>
 
-  <!-- 其他部分保持不变，只调整容器宽度 -->
+  <!-- Projects Section -->
   <div class="w3-container w3-padding-32" id="projects">
     <h2>Recent Projects</h2>
-    <!-- 项目内容保持不变 -->
-    <!-- ... 省略项目部分以节省空间 ... -->
+    <p class="w3-justify">
+        <strong>1. Alibaba Innovative Research Foundation (talent plan for Ph.D student)</strong>. With the continuous popularization and development of intelligent devices and information collection technologies, more and more structured data become more accessible and play an unprecedented application value in different fields, such as Internet finance, smart transportation, smart agriculture, recommendation marketing, and so on. To address the challenges of complex structured data in information pattern mining and representation learning, such as the low quality of data due to data sparsity, how to self-adaptively utilize or eliminate bias in biased data modeling, how to fully learn the complementary information among different structured data elements in multi-data representation learning, and how to improve interpretability in structured data representation modeling through knowledge-aware approach, this project proposes a knowledge-aware approach to improve interpretability in structured data representation modeling. This project proposes a framework for knowledge-enhanced structured data representation learning and attempts to systematically give a solution to the challenges.
+    </p>
+
+        <h4><li>Knowledge-enhanced Representation Learning for Structured Data</li></h4>
+        <img style="width:90%;" src="images/pro1.png"> 
+        <!-- <p class="w3-justify">
+        <a style="color: #447ec9" href="https://github.com/huawei-noah/AdderNet">Project Page</a> | <a style="color: #447ec9" href="https://arxiv.org/pdf/2101.10015.pdf">Hardware Implementation</a>
+        </p> -->
+        <p class="w3-justify">
+        Around the above condensed several key research problems, the proposed solutions of this project include 1) homogeneous knowledge mining and abstract semantic sharing among samples based on prototype learning; 2) environmental semantic enhancement and adaptive biased sample modeling based on knowledge graph; 3) unified representation of common knowledge and collaborative learning of personality information among multivariate heterogeneous data; 4) automatic acquisition of interpretable rules in decision making and sample specificity-based data analysis framework. The flow organization of the whole program from the research background to the scientific problem condensation to the overview of the proposed key technologies to the overall research objectives is shown in Figure above.
+        </p> 
+
+    <p class="w3-justify">
+        <strong>2. Fundamental Research Fund Project of Central Universities of China</strong>. With the continuous upgrading of national intelligent construction strategy and the fast development of techniques such as real-time positioning, intelligent mobile terminals and portable sensors, spatial-temporal data has become increasingly available nowadays and shows practical application value. Mining valuable knowledge from spatial-temporal data can contribute to effectively solve the problems in real world applications. Accordingly, how to better learn the representation of pattern in spatial-temporal data, and establish accurate prediction model for different tasks, so as to realize discovering of high-value knowledge automatically can be a very valuable research problem. 
+    </p>
+
+        <h4><li>Spatio-temporal Data Mining and Prediction Modeling</li></h4>
+        <img style="width:80%;" src="images/pro2.png"> 
+        <!-- <p class="w3-justify">
+        <a style="color: #447ec9" href="https://github.com/huawei-noah/AdderNet">Project Page</a> | <a style="color: #447ec9" href="https://arxiv.org/pdf/2101.10015.pdf">Hardware Implementation</a>
+        </p> -->
+        <p class="w3-justify">
+        In this project, spatial-temporal data is taken as the research object, focusing on the key research task of representation learning and prediction modeling in spatial-temporal data mining, aiming at the important research issues such as taking importance-based sampling for time series prediction, heterogeneous spatial-temporal representation learning for demand prediction, learning embedding from order-dependently semantic cross-field categorical attributes and dynamic interest sequence learning via knowledge graph. 
+        </p> 
   </div>
   
+  <!-- Research Section -->
   <div class="w3-container w3-padding-32" id="publications">
     <h2>Research</h2>
-    <!-- 研究内容保持不变 -->
-    <!-- ... 省略研究部分以节省空间 ... -->
+      <p class="w3-left-align" style="line-height:200%">
+        He is interested in sequence data mining, knowledge graph and their applications in Healthcare Informatics, RecSys and finTech, etc. 
+      </p>
+    
+    <h4> Conference Papers:</h4>
+
+    <ol>
+      <p>
+      <li><strong>FlexCare: Leveraging Cross-Task Synergy for Flexible Multimodal Healthcare Prediction</strong>
+      <br>
+      Muhao Xu, Zhenfeng Zhu, <strong>Youru Li</strong>, Shuai Zheng, Yawei Zhao, Kunlun He, Yao Zhao
+      <br>
+      <em>KDD</em> 2024 | <a style="color: #447ec9" href="https://dl.acm.org/doi/10.1145/3637528.3671974">paper</a> | <a style="color: #447ec9" href="https://github.com/mhxu1998/FlexCare">code</a> 
+      </p>
+      
+      <p>
+      <li><strong>Learning Joint Relational Co-evolution in Spatial-Temporal Knowledge Graph for SMEs Supply Chain Prediction</strong>
+      <br>
+      <strong>Youru Li</strong>, Zhenfeng Zhu, Xiaobo Guo, Linxun Chen, Zhouyin Wang, Yinmeng Wang, Bing Han, Yao Zhao
+      <br>
+      <em>KDD</em> 2023 | <a style="color: #447ec9" href="data/KDD23.pdf">paper</a> | <a style="color: #447ec9" href="https://github.com/LiYouru0228/STKG-JRCL">code</a> | <a style="color: #447ec9" href="https://www.youtube.com/watch?app=desktop&v=ev8K2mK2fgg&list=PLn0nrSd4xjjaJCYKwjTdC7AvGrBKbu_yd&index=3">video</a>
+      </p>
+      
+      <p>
+      <li><strong>SGT: Scene Graph-Guided Transformer for Surgical Report Generation</strong>
+      <br>
+      Chen Lin, Shuai Zheng, Zhizhe Liu, <strong>Youru Li</strong>, Zhenfeng Zhu, Yao Zhao
+      <br>
+      <em>MICCAI</em> 2022 | <a style="color: #447ec9" href="data/SGT.pdf">paper</a> | <a style="color: #447ec9" href="https://github.com/ccccchenllll/SGT_master">code</a>
+      </p>
+
+      <p>
+      <li><strong>Learning heterogeneous spatial-temporal representation for bike-sharing demand prediction</strong>
+      <br>
+      <strong>Youru Li</strong>, Zhenfeng Zhu, Deqiang Kong, Meixiang Xu, Yao Zhao
+      <br>
+      <em>AAAI</em> 2019 | <a style="color: #447ec9" href="https://ojs.aaai.org/index.php/AAAI/article/view/3890">paper</a> 
+      </p>
+
+      <p>
+      <li><strong>The study on human action recognition with depth video for intelligent monitoring</strong>
+      <br>
+      Xueping Liu, Yibo Li, <strong>Youru Li</strong>, Shi Yu, Can Tian
+      <br>
+      <em>IEEE CCDC</em> 2019 | <a style="color: #447ec9" href="https://ieeexplore.ieee.org/abstract/document/8833460">paper</a> 
+      </p>
+
+      <p>
+      <li><strong>Study on system modeling and optimization of static evaluation based on the computer game of draughts</strong>
+      <br>
+      <strong>Li Youru</strong>, Liu Xueping, Zhang Hekai, Xi Yuting
+      <br>
+      <em>IEEE CCDC</em> 2016 | <a style="color: #447ec9" href="https://ieeexplore.ieee.org/abstract/document/7531735">paper</a> 
+      </p>
+
+      <p>
+      <li><strong>A systematic research about the computer game of checkers based on the decision-making of AI</strong>
+      <br>
+      <strong>Youru Li</strong>, Liu Xueping, Wang Yajie, Xi Yuting
+      <br>
+      <em>IEEE CCDC</em> 2015 | <a style="color: #447ec9" href="https://ieeexplore.ieee.org/abstract/document/7161978">paper</a> 
+      </p>
+
+    </ol>
+    
+    <h4> Journal Papers:</h4>
+
+    <ol>
+      <p>
+      <li><strong>Determinantal Point Processes Guided Crowd-wise Mixture-of-Experts for Recommendation in Alipay</strong>
+      <br>
+      <strong>Youru Li</strong>, Zhenfeng Zhu, Shaohu Chen, Kaiming Shen, Xingxing Zhang Wenliang Zhong and Yao Zhao
+      <br>
+      <em>ACM Transactions on Recommender Systems </em> 2024 | <a style="color: #447ec9" href="https://dl.acm.org/doi/10.1145/3691357">paper</a>          
+      </p>
+      
+      <p>
+      <li><strong>HKA: A Hierarchical Knowledge Alignment Framework for Multimodal Knowledge Graph Completion</strong>
+      <br>
+      Yunhui Xu, <strong>Youru Li</strong>, Muhao Xu, Zhenfeng Zhu and Yao Zhao
+      <br>
+      <em>ACM Transactions on Multimedia Computing, Communications, and Applications </em> 2024 | <a style="color: #447ec9" href="https://dl.acm.org/doi/10.1145/3664288">paper</a>          
+      </p>
+      
+      <p>
+      <li><strong>Multi-Task Learning with Sequential Dependence Towards Industrial Applications: A Systematic Formulation</strong>
+      <br>
+      Huaxin Pang, Shikui Wei, <strong>Youru Li</strong>, Ting Liu, Huaqi Zhang, Ying Qin and Yao Zhao
+      <br>
+      <em>IEEE Transactions on Instrumentation and Measurement </em> 2024 | <a style="color: #447ec9" href="https://ieeexplore.ieee.org/document/10445316">paper</a>          
+      </p>
+      
+      <p>
+      <li><strong>Multi-Task Learning with Sequential Dependence Towards Industrial Applications: A Systematic Formulation</strong>
+      <br>
+      Xiaobo Guo, Mingming Ha, Xuewen Tao, Shaoshuai Li, <strong>Youru Li</strong>, Zhenfeng Zhu, Zhiyong Shen, Li Ma
+      <br>
+      <em>ACM Transactions on Knowledge Discovery from Data </em> 2024 | <a style="color: #447ec9" href="https://dl.acm.org/doi/pdf/10.1145/3640468">paper</a>          
+      </p>
+      
+      <p>
+      <li><strong>Multi-scale adaptive attention-based time-variant neural networks for multi-step time series forecasting</strong>
+      <br>
+      Changxia Gao, Ning Zhang, <strong>Youru Li</strong>, Yan Lin and Huaiyu Wan
+      <br>
+      <em>Applied Intelligence </em> 2023 | <a style="color: #447ec9" href="data/APIN-23.pdf">paper</a> | <a style="color: #447ec9" href="https://github.com/chxiag/MATVN">code</a>         
+      </p>
+      
+      <p>
+      <li><strong>Node-oriented Spectral Filtering for Graph Neural Networks</strong>
+      <br>
+      Shuai Zheng, Zhenfeng Zhu, Zhizhe Liu, <strong>Youru Li</strong> and Yao Zhao
+      <br>
+      <em>IEEE Transactions on Pattern Analysis and Machine Intelligence</em> 2023 | <a style="color: #447ec9" href="https://ieeexplore.ieee.org/document/10286416">paper</a> 
+      </p>
+      
+      <p>
+      <li><strong>Exploring Large-scale Financial Knowledge Graph for SMEs Supply Chain Mining</strong>
+      <br>
+      <strong>Youru Li</strong>, Zhenfeng Zhu, Linxun Chen, Bin Yang, Yaxi Wu, Xiaobo Guo, Bing Han and Yao Zhao
+      <br>
+      <em>IEEE Transactions on Knowledge and Data Engineering</em> 2023 | <a style="color: #447ec9" href="https://ieeexplore.ieee.org/document/10256685">paper</a> | <a style="color: #447ec9" href="https://github.com/LiYouru0228/MSCL">code</a>
+      </p>
+      
+      <p>
+      <li><strong>HGV4Risk: Hierarchical Global View-guided Sequence Representation Learning for Risk Prediction</strong>
+      <br>
+      <strong>Youru Li</strong>, Zhenfeng Zhu, Xiaobo Guo, Shaoshuai Li, Yuchen Yang and Yao Zhao
+      <br>
+      <em>ACM Transactions on Knowledge Discovery from Data</em> 2023 | <a style="color: #447ec9" href="https://dl.acm.org/doi/10.1145/3605895">paper</a> | <a style="color: #447ec9" href="https://github.com/LiYouru0228/HGV">code</a>
+      </p>
+      
+      <p>
+      <li><strong>Adversarial self-attentive time-variant neural networks for multi-step time series forecasting</strong>
+      <br>
+      Changxia Gao, Ning Zhang, <strong>Youru Li</strong>, Yan Lin and Huaiyu Wan
+      <br>
+      <em>Expert Systems with Applications </em> 2023 | <a style="color: #447ec9" href="https://www.sciencedirect.com/science/article/pii/S0957417423012241">paper</a> | <a style="color: #447ec9" href="https://github.com/chxiag/ASATVN">code</a>         
+      </p>
+    
+      <p>
+      <li><strong>Cooperative dual medical ontology representation learning for clinical assisted decision-making</strong>
+      <br>
+      Muhao Xu, Zhenfeng Zhu, <strong>Youru Li</strong>, Shuai Zheng, Linfeng Li, Haiyan Wu and Yao Zhao
+      <br>
+      <em>Computers in Biology and Medicine </em> 2023 | <a style="color: #447ec9" href="https://www.sciencedirect.com/science/article/pii/S0010482523006030">paper</a> | <a style="color: #447ec9" href="https://github.com/mhxu1998/CoDMO">code</a>       
+      </p>
+      
+      <p>
+      <li><strong>CED: A case-level explainable paramedical diagnosis via AdaGBDT</strong>
+      <br>
+      Zhenyu Guo, Muhao Xu, Yuchen Yang, <strong>Youru Li</strong>, Haiyan Wu, Zhenfeng Zhu and Yao Zhao
+      <br>
+      <em>Computers in Biology and Medicine </em> 2022 | <a style="color: #447ec9" href="https://www.sciencedirect.com/science/article/pii/S0010482522012082?dgc">paper</a>         
+      </p>
+      
+      <p>
+      <li><strong>Sylvester Equation Induced Collaborative Representation Learning for Recommendation</strong>
+      <br>
+      Xingyuan Li, Zhenfeng Zhu, Shuai Zheng, Zhizhe Liu, <strong>Youru Li</strong>, Xiaobo Guo, Deqiang Kong and Yao Zhao
+      <br>
+      <em>IEEE Transactions on Knowledge and Data Engineering </em> 2022 | <a style="color: #447ec9" href="https://ieeexplore.ieee.org/abstract/document/9933729">paper</a>         
+      </p>
+      
+      <p>
+      <li><strong>Self-attention-based time-variant neural networks for multi-step time series forecasting</strong>
+      <br>
+      Changxia Gao, Ning Zhang, <strong>Youru Li</strong>, Feng Bian and Huaiyu Wan
+      <br>
+      <em>Neural Computing and Applications </em> 2022 | <a style="color: #447ec9" href="data/ncaa.pdf">paper</a> | <a style="color: #447ec9" href="https://github.com/chxiag/SATVNN-cuda">code</a>
+      </p>
+
+      <p>
+      <li><strong>Deep learning based torsional nystagmus detection for dizziness and vertigo diagnosis</strong>
+      <br>
+      Wanlu Zhang, Haiyan Wu, Yang Liu, Shuai Zheng, Zhizhe Liu, <strong>Youru Li</strong>, Yao Zhao and Zhenfeng Zhu
+      <br>
+      <em>Biomedical Signal Processing and Control </em> 2021 | <a style="color: #447ec9" href="data/bspc.pdf">paper</a> 
+      </p>
+
+      <p>
+      <li><strong>Learning Dynamic User Interest Sequence in Knowledge Graphs for Click-Through Rate Prediction</strong>
+      <br>
+      <strong>Youru Li</strong>, Xiaobo Guo, Wenfang Lin, Mingjie Zhong, Qunwei Li, Zhongyi Liu, Wenliang Zhong, Zhenfeng Zhu
+      <br>
+      <em>IEEE Transactions on Knowledge and Data Engineering </em> 2021 | <a style="color: #447ec9" href="data/TKDE-21.pdf">paper</a> 
+      </p>
+
+      <p>
+      <li><strong>DKEN: Deep knowledge-enhanced network for recommender systems</strong>
+      <br>
+      Xiaobo Guo, Wenfang Lin, <strong>Youru Li</strong>, Zhongyi Liu, Lin Yang, Shuliang Zhao, Zhenfeng Zhu
+      <br>
+      <em>Information Sciences </em> 2020 | <a style="color: #447ec9" href="data/dken.pdf">paper</a> 
+      </p>
+
+      <p>
+      <li><strong>CCAE: Cross-field categorical attributes embedding for cancer clinical endpoint prediction</strong>
+      <br>
+      <strong>Youru Li</strong>, Zhenfeng Zhu, Haiyan Wu, Silu Ding, Yao Zhao
+      <br>
+      <em>Artificial Intelligence in Medicine </em> 2020 | <a style="color: #447ec9" href="data/ccae.pdf">paper</a> 
+      </p>
+
+      <p>
+      <li><strong>EA-LSTM: Evolutionary attention-based LSTM for time series prediction</strong>
+      <br>
+      <strong>Youru Li</strong>, Zhenfeng Zhu, Deqiang Kong, Hua Han, Yao Zhao
+      <br>
+      <em>Knowledge-Based Systems </em> 2019 | <a style="color: #447ec9" href="data/kbs.pdf">paper</a> | <a style="color: #447ec9" href="https://github.com/LiYouru0228/EA-LSTM">code</a> <font color="#FF0000">(ESI Highly Cited Paper)</font> 
+      </p>
+
+      <p>
+      <li><strong>GBDT based railway accident type prediction and cause analysis (in Chinese)</strong>
+      <br>
+      Minhui Zhong, Wanlu Zhang, <strong>Youru Li</strong>, Zhenfeng Zhu, Yao Zhao
+      <br>
+      <em>Acta Autom. Sin </em> 2022 | <a style="color: #447ec9" href="data/Acta.pdf">paper</a> <font color="#FF0000">(CNKI 2011-2022 High Impact Papers)</font> 
+      </p>
+
+      <p>
+      <li><strong>Fault Diagnosis Technology of Inter-shaft Bearing Based on EMD Fuzzy Entropy and Consultative Decision Fusion Model (in Chinese)</strong>
+      <br>
+      Wang Zhi, <strong>Youru Li</strong>, Tian Jing, Liu Lili, Li Jikai
+      <br>
+      <em>Aeroengine </em> 2019 | <a style="color: #447ec9" href="data/Aeroengine.pdf">paper</a> 
+      </p>
+
+      <p>
+      <li><strong>Fault diagnosis of aero-engine inter-shaft bearing based on Deep-GBM (in Chinese)</strong>
+      <br>
+      Tian Jing, <strong>Youru Li</strong>, Yanting Ai
+      <br>
+      <em>Journal of Aerospace Power </em> 2019 | <a style="color: #447ec9" href="data/jap.pdf">paper</a> 
+      </p>
+
+      <p>
+      <li><strong>The Application Study on Improved Distributed Genetic Algorithm in Computer Games (in Chinese)</strong>
+      <br>
+      Xueping Liu, <strong>Youru Li</strong>
+      <br>
+      <em>Transactions of Beijing Institute of Technology </em> 2017 | <a style="color: #447ec9" href="data/tbit.pdf">paper</a> 
+      </p>
+    </ol>
   </div>
 
+<!-- Services Section -->
   <div class="w3-container w3-light-grey w3-padding-32" id="service">
     <h2>Services</h2>
-    <!-- 服务内容保持不变 -->
-    <!-- ... 省略服务部分以节省空间 ... -->
+      <p><li> Invited Reviewers of <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=34">IEEE TPAMI</a>, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=69">IEEE TKDE</a>, <a href="https://dl.acm.org/journal/tkdd">ACM TKDD</a>, <a href="https://dl.acm.org/journal/TIST">ACM TIST</a>, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=71">IEEE TPDS</a>, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5962385">IEEE TNNLS</a>, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6221036">IEEE TCYB</a>, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6979">IEEE TITS</a>, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6687317">IEEE TBD</a>, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6570650">IEEE TCSS</a>, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=9424">IEEE TII</a>, <a href="https://cis.ieee.org/publications/ieee-transactions-on-artificial-intelligence">IEEE TAI</a>, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6221021">IEEE TSMC</a>, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=91">IEEE TFS</a>, <a href="https://cis.ieee.org/publications/t-emerging-topics-in-ci">IEEE TETCI</a>, <a href="https://www.sciencedirect.com/journal/information-processing-and-management">Information Processing & Management </a>, <a href="https://www.sciencedirect.com/journal/knowledge-based-systems">Knowledge-Based Systems</a>, <a href="https://pubs.acs.org/journal/asrmcd">ACS RM</a>, <a href="https://digital-library.theiet.org/content/journals/iet-its">IET ITS</a>, <a href="https://www.tandfonline.com/toc/ttrb20/current">Transportmetrica Part B</a>, <a href="http://www.tandfonline.com/toc/gits20/current">Journal of Intelligent Transportation Systems</a>, <a href="hhttps://ieeexplore.ieee.org/xpl/aboutJournal.jsp?punumber=6287639">IEEE Access</a>, <a href="hhttps://ieeexplore.ieee.org/xpl/aboutJournal.jsp?punumber=6287639">Journal of Intelligent Transportation Systems
+</a>, <a href="https://www.tandfonline.com/toc/tinf20/current">INFOR: Information Systems and Operational Research</a>, <a href="https://www.hindawi.com/journals/jat/">Journal of Advanced Transportation</a>, <a href="https://www.tandfonline.com/journals/gits20">International Journal of Intelligent Systems</a>, <a href="https://www.hindawi.com/journals/cin/">Computational Intelligence and Neuroscience</a>, etc.</p>
+      
+      <p><li> Program Committee Members of <a href="https://www2024.thewebconf.org/">TheWebConf(WWW) 2022, 2023, 2024, 2025</a>, <a href="https://2024.ieeeicassp.org/">ICASSP 2024, 2025</a> etc.</p>
   </div>
 
+  <!-- Awards Section -->
   <div class="w3-container w3-padding-32" id="award">
     <h2>Awards</h2>
-    <!-- 奖项内容保持不变 -->
-    <!-- ... 省略奖项部分以节省空间 ... -->
-  </div>
+    <p><li> 2024, <a href="http://103.95.70.85:81/index_detail.aspx?id=28">Second Prize for Technological Progress of the Chinese Association for Artificial Intelligence (CAAI) WU Wenjun AI Science and Technology Award</a></p>
+    <p><li> 2023, <a href="https://yb.cie.org.cn/list_223/13229.html">CIE Excellent Doctoral Dissertation Forum Best Poster Award</p>
+    <p><li> 2023, National Scholarship for Ph.D Students</p>
+    <p><li> 2022, First-class Ph.D. Academic Scholarship of BJTU </a></p>   
+    <p><li> 2021, <a href="https://www.cie-info.org.cn/site/content/4061.html">Chinese Institute of Electronics (CIE) Excellent Master Dissertation Award</a></p>               
+    <p><li> 2020, Excellent Master Dissertation of Beijing Jiaotong University</p> 
+    <p><li> 2020, Excellent graduate in Beijing, Department of Education of Beijing, 2020</p> 
+    <p><li> 2020, <a href="http://news.bjtu.edu.cn/info/1044/32481.htm">BJTU Top Grade Scholarship - ZHIXING Scholarship Nomination</a> (20 graduates per year)</p> 
+    <p><li> 2019, National Scholarship for Graduate Students</p>
+    <p><li> 2018, <a href="https://github.com/LiYouru0228/KDD_CUP_2018">ACM KDD Cup track Top 20</a></p> 
+    <p><li> 2015, <a href="http://computergames.caai.cn/index.html">The 9th China Computer Gaming Championship</a>, International Checkers (10*10), third runner-up.</p> 
+  </div>  
 
   <div class="w3-light-grey w3-center w3-padding-24">
     Welcome to use this website's <a href="https://liyouru0228.github.io/HomePage/">source code</a>, just add a link back to here. <a href="https://www.liyouru.site/">&#10025;</a></br>
