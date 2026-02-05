@@ -245,6 +245,87 @@
   }
   </style>
 
+    /* 年级分块展示样式 */
+  .year-group {
+    margin-bottom: 25px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background: #f9f9f9;
+  }
+  
+  .year-group:last-child {
+    margin-bottom: 0;
+  }
+  
+  .year-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e0e0e0;
+  }
+  
+  .year-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .year-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .year-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+  }
+  
+  .year-member-item {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .year-member-item:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+  }
+  
+  .member-name-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .member-name-badge {
+    display: inline-block;
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: bold;
+    margin-right: 8px;
+  }
+  
+  /* 响应式调整 */
+  @media (max-width: 768px) {
+    .year-members {
+      grid-template-columns: 1fr;
+    }
+  }
+
   <link rel="icon" type="image/png" href="images/icons.png">
 </head>
 
@@ -324,7 +405,7 @@
     </div>
   </div>
 
-  <!-- Group Section -->
+    <!-- Group Section -->
   <div class="w3-container w3-padding-32" id="group">
     <h2>Research Group</h2>
     <div class="w3-panel w3-border w3-border-blue w3-round-large w3-padding">
@@ -336,16 +417,25 @@
           <div class="group-icon phd-icon">PhD</div>
           <h4>PhD Students</h4>
         </div>
-        <ul class="member-list">
-          <li class="member-item">
-            <span class="member-year">2026</span>
-            <span class="member-name">Chen Liang</span>
-            <div class="member-research">
-              <span class="research-tag">AI4Science</span>
-              <span class="research-tag">Intelligent Healthcare</span>
+        
+        <div class="year-group">
+          <div class="year-header">
+            <span class="year-badge">2026</span>
+            <span class="year-title">Class of 2026</span>
+          </div>
+          <div class="year-members">
+            <div class="year-member-item">
+              <div class="member-name-container">
+                <span class="member-name-badge">PhD</span>
+                <span class="member-name">Chen Liang</span>
+              </div>
+              <div class="member-research">
+                <span class="research-tag">AI4Science</span>
+                <span class="research-tag">Intelligent Healthcare</span>
+              </div>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
       
       <!-- Master Students -->
@@ -354,93 +444,136 @@
           <div class="group-icon master-icon">MS</div>
           <h4>Master Students</h4>
         </div>
-        <ul class="member-list">
-          <!-- 2024级 -->
-          <li class="member-item">
-            <span class="member-year">2024</span>
-            <span class="member-name">Yixuan Fu</span>
-            <div class="member-research">
-              <span class="research-tag">Knowledge Graph</span>
-              <span class="research-tag">Spatio-temporal Large Models</span>
+        
+        <!-- 2024级硕士 -->
+        <div class="year-group">
+          <div class="year-header">
+            <span class="year-badge">2024</span>
+            <span class="year-title">Class of 2024</span>
+          </div>
+          <div class="year-members">
+            <div class="year-member-item">
+              <div class="member-name-container">
+                <span class="member-name-badge">MS</span>
+                <span class="member-name">Yixuan Fu</span>
+              </div>
+              <div class="member-research">
+                <span class="research-tag">Knowledge Graph</span>
+                <span class="research-tag">Spatio-temporal Large Models</span>
+              </div>
             </div>
-          </li>
-          <li class="member-item">
-            <span class="member-year">2024</span>
-            <span class="member-name">Jiao Zhang</span>
-            <div class="member-research">
-              <span class="research-tag">Spatial Data Intelligence</span>
-              <span class="research-tag">Smart Construction</span>
+            <div class="year-member-item">
+              <div class="member-name-container">
+                <span class="member-name-badge">MS</span>
+                <span class="member-name">Jiao Zhang</span>
+              </div>
+              <div class="member-research">
+                <span class="research-tag">Spatial Data Intelligence</span>
+                <span class="research-tag">Smart Construction</span>
+              </div>
             </div>
-          </li>
-          
-          <!-- 2025级 -->
-          <li class="member-item">
-            <span class="member-year">2025</span>
-            <span class="member-name">Jing Gao</span>
-            <div class="member-research">
-              <span class="research-tag">Knowledge Graph</span>
-              <span class="research-tag">Large Models</span>
-              <span class="research-tag">Recommendation Systems</span>
+          </div>
+        </div>
+        
+        <!-- 2025级硕士 -->
+        <div class="year-group">
+          <div class="year-header">
+            <span class="year-badge">2025</span>
+            <span class="year-title">Class of 2025</span>
+          </div>
+          <div class="year-members">
+            <div class="year-member-item">
+              <div class="member-name-container">
+                <span class="member-name-badge">MS</span>
+                <span class="member-name">Jing Gao</span>
+              </div>
+              <div class="member-research">
+                <span class="research-tag">Knowledge Graph</span>
+                <span class="research-tag">Large Models</span>
+                <span class="research-tag">Recommendation Systems</span>
+              </div>
             </div>
-          </li>
-          <li class="member-item">
-            <span class="member-year">2025</span>
-            <span class="member-name">Juhuan Li</span>
-            <div class="member-research">
-              <span class="research-tag">Spatio-temporal Data Mining</span>
-              <span class="research-tag">Generative Recommendation</span>
+            <div class="year-member-item">
+              <div class="member-name-container">
+                <span class="member-name-badge">MS</span>
+                <span class="member-name">Juhuan Li</span>
+              </div>
+              <div class="member-research">
+                <span class="research-tag">Spatio-temporal Data Mining</span>
+                <span class="research-tag">Generative Recommendation</span>
+              </div>
             </div>
-          </li>
-          <li class="member-item">
-            <span class="member-year">2025</span>
-            <span class="member-name">Haomin Guo</span>
-            <div class="member-research">
-              <span class="research-tag">Multimodal Intelligence</span>
-              <span class="research-tag">Intelligent Healthcare</span>
+            <div class="year-member-item">
+              <div class="member-name-container">
+                <span class="member-name-badge">MS</span>
+                <span class="member-name">Haomin Guo</span>
+              </div>
+              <div class="member-research">
+                <span class="research-tag">Multimodal Intelligence</span>
+                <span class="research-tag">Intelligent Healthcare</span>
+              </div>
             </div>
-          </li>
-          <li class="member-item">
-            <span class="member-year">2025</span>
-            <span class="member-name">Jianrui Hui</span>
-            <div class="member-research">
-              <span class="research-tag">Trustworthy Recommendation Systems</span>
+            <div class="year-member-item">
+              <div class="member-name-container">
+                <span class="member-name-badge">MS</span>
+                <span class="member-name">Jianrui Hui</span>
+              </div>
+              <div class="member-research">
+                <span class="research-tag">Trustworthy Recommendation Systems</span>
+              </div>
             </div>
-          </li>
-          <li class="member-item">
-            <span class="member-year">2025</span>
-            <span class="member-name">Wenjie Tian</span>
-            <div class="member-research">
-              <span class="research-tag">Spatio-temporal Data Mining</span>
-              <span class="research-tag">Intelligent Healthcare</span>
+            <div class="year-member-item">
+              <div class="member-name-container">
+                <span class="member-name-badge">MS</span>
+                <span class="member-name">Wenjie Tian</span>
+              </div>
+              <div class="member-research">
+                <span class="research-tag">Spatio-temporal Data Mining</span>
+                <span class="research-tag">Intelligent Healthcare</span>
+              </div>
             </div>
-          </li>
-          
-          <!-- 2026级 -->
-          <li class="member-item">
-            <span class="member-year">2026</span>
-            <span class="member-name">Ruofei Zhang</span>
-            <div class="member-research">
-              <span class="research-tag">Time Series Foundation Models</span>
-              <span class="research-tag">Intelligent Healthcare</span>
+          </div>
+        </div>
+        
+        <!-- 2026级硕士 -->
+        <div class="year-group">
+          <div class="year-header">
+            <span class="year-badge">2026</span>
+            <span class="year-title">Class of 2026</span>
+          </div>
+          <div class="year-members">
+            <div class="year-member-item">
+              <div class="member-name-container">
+                <span class="member-name-badge">MS</span>
+                <span class="member-name">Ruofei Zhang</span>
+              </div>
+              <div class="member-research">
+                <span class="research-tag">Time Series Foundation Models</span>
+                <span class="research-tag">Intelligent Healthcare</span>
+              </div>
             </div>
-          </li>
-          <li class="member-item">
-            <span class="member-year">2026</span>
-            <span class="member-name">Kaijin Zhang</span>
-            <div class="member-research">
-              <span class="research-tag">Knowledge Graph</span>
-              <span class="research-tag">Spatio-temporal Large Models</span>
+            <div class="year-member-item">
+              <div class="member-name-container">
+                <span class="member-name-badge">MS</span>
+                <span class="member-name">Kaijin Zhang</span>
+              </div>
+              <div class="member-research">
+                <span class="research-tag">Knowledge Graph</span>
+                <span class="research-tag">Spatio-temporal Large Models</span>
+              </div>
             </div>
-          </li>
-          <li class="member-item">
-            <span class="member-year">2026</span>
-            <span class="member-name">Zhiyuan Chen</span>
-            <div class="member-research">
-              <span class="research-tag">Multimodal Intelligence</span>
-              <span class="research-tag">Intelligent Healthcare</span>
+            <div class="year-member-item">
+              <div class="member-name-container">
+                <span class="member-name-badge">MS</span>
+                <span class="member-name">Zhiyuan Chen</span>
+              </div>
+              <div class="member-research">
+                <span class="research-tag">Multimodal Intelligence</span>
+                <span class="research-tag">Intelligent Healthcare</span>
+              </div>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
       
       <!-- Undergraduate Students -->
@@ -449,62 +582,89 @@
           <div class="group-icon undergrad-icon">UG</div>
           <h4>Undergraduate Students</h4>
         </div>
-        <ul class="member-list">
-          <!-- 2024级 -->
-          <li class="member-item">
-            <span class="member-year">2024</span>
-            <span class="member-name">Yinuo Zhang</span>
-            <div class="member-research">
-              <span class="research-tag">Time Series Foundation Models</span>
-              <span class="research-tag">Intelligent Healthcare</span>
+        
+        <!-- 2024级本科 -->
+        <div class="year-group">
+          <div class="year-header">
+            <span class="year-badge">2024</span>
+            <span class="year-title">Class of 2024</span>
+          </div>
+          <div class="year-members">
+            <div class="year-member-item">
+              <div class="member-name-container">
+                <span class="member-name-badge">UG</span>
+                <span class="member-name">Yinuo Zhang</span>
+              </div>
+              <div class="member-research">
+                <span class="research-tag">Time Series Foundation Models</span>
+                <span class="research-tag">Intelligent Healthcare</span>
+              </div>
             </div>
-          </li>
-          <li class="member-item">
-            <span class="member-year">2024</span>
-            <span class="member-name">Mingzhe Li</span>
-            <div class="member-research">
-              <span class="research-tag">Knowledge Graph</span>
-              <span class="research-tag">Large Models</span>
-              <span class="research-tag">Recommendation Systems</span>
+            <div class="year-member-item">
+              <div class="member-name-container">
+                <span class="member-name-badge">UG</span>
+                <span class="member-name">Mingzhe Li</span>
+              </div>
+              <div class="member-research">
+                <span class="research-tag">Knowledge Graph</span>
+                <span class="research-tag">Large Models</span>
+                <span class="research-tag">Recommendation Systems</span>
+              </div>
             </div>
-          </li>
-          
-          <!-- 2025级 -->
-          <li class="member-item">
-            <span class="member-year">2025</span>
-            <span class="member-name">Ruosen Wang</span>
-            <div class="member-research">
-              <span class="research-tag">Knowledge Graph</span>
-              <span class="research-tag">Large Models</span>
-              <span class="research-tag">Recommendation Systems</span>
+          </div>
+        </div>
+        
+        <!-- 2025级本科 -->
+        <div class="year-group">
+          <div class="year-header">
+            <span class="year-badge">2025</span>
+            <span class="year-title">Class of 2025</span>
+          </div>
+          <div class="year-members">
+            <div class="year-member-item">
+              <div class="member-name-container">
+                <span class="member-name-badge">UG</span>
+                <span class="member-name">Ruosen Wang</span>
+              </div>
+              <div class="member-research">
+                <span class="research-tag">Knowledge Graph</span>
+                <span class="research-tag">Large Models</span>
+                <span class="research-tag">Recommendation Systems</span>
+              </div>
             </div>
-          </li>
-          <li class="member-item">
-            <span class="member-year">2025</span>
-            <span class="member-name">Yuchen Wu</span>
-            <div class="member-research">
-              <span class="research-tag">Knowledge Graph</span>
-              <span class="research-tag">Large Models</span>
-              <span class="research-tag">Recommendation Systems</span>
+            <div class="year-member-item">
+              <div class="member-name-container">
+                <span class="member-name-badge">UG</span>
+                <span class="member-name">Yuchen Wu</span>
+              </div>
+              <div class="member-research">
+                <span class="research-tag">Knowledge Graph</span>
+                <span class="research-tag">Large Models</span>
+                <span class="research-tag">Recommendation Systems</span>
+              </div>
             </div>
-          </li>
-          <li class="member-item">
-            <span class="member-year">2025</span>
-            <span class="member-name">Jiahe Li</span>
-            <div class="member-research">
-              <span class="research-tag">Time Series Foundation Models</span>
-              <span class="research-tag">Intelligent Healthcare</span>
+            <div class="year-member-item">
+              <div class="member-name-container">
+                <span class="member-name-badge">UG</span>
+                <span class="member-name">Jiahe Li</span>
+              </div>
+              <div class="member-research">
+                <span class="research-tag">Time Series Foundation Models</span>
+                <span class="research-tag">Intelligent Healthcare</span>
+              </div>
             </div>
-          </li>
-          <li class="member-item">
-            <span class="member-year">2025</span>
-            <span class="member-name">Tianyu Chen</span>
-            <div class="member-research">
-              <span class="research-tag">Time Series Foundation Models</span>
-              <span class="research-tag">Intelligent Healthcare</span>
+            <div class="year-member-item">
+              <div class="member-name-container">
+                <span class="member-name-badge">UG</span>
+                <span class="member-name">Tianyu Chen</span>
+              </div>
+              <div class="member-research">
+                <span class="research-tag">Time Series Foundation Models</span>
+                <span class="research-tag">Intelligent Healthcare</span>
+              </div>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
